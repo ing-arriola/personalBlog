@@ -1,13 +1,16 @@
 import React from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home";
+import Layout from "./hoc/Layout";
 
-function App() {
+const App = () => {
+  let routes = <Route path="/" component={Home} />;
   return (
     <div>
-      <Home />
+      <Layout>{routes}</Layout>
     </div>
   );
-}
+};
 
 export default App;

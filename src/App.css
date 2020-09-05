@@ -91,6 +91,18 @@ body {
   }
 }
 
+@keyframes moveFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -115,4 +127,30 @@ body {
 .btn-white {
   background: #fff;
   color: rgb(56, 56, 56);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated-from-bottom {
+  animation: moveFromBottom 0.7s ease-in;
 }
