@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainImage {
+  height: 95vh;
+  background-image: url(./images/frontPage.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /*The next line add a negative offset to get the text-box right 
+  in the middle of the screen*/
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
