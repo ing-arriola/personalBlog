@@ -2,7 +2,7 @@ import React from "react";
 import NavigationItems from "./NavigationItems";
 const Toolbar = (props) => {
   return (
-    <header>
+    <header className="toolbar">
       <div></div>
       <nav>
         <NavigationItems />

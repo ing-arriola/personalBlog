@@ -3,9 +3,18 @@ import NavigationItem from "./NavigationItem";
 
 const NavigationItems = () => {
   return (
-    <ul>
+    <ul className="navigation-items">
       <NavigationItem link="/" exact>
         Home
+      </NavigationItem>
+      <NavigationItem link="/about" exact>
+        About
+      </NavigationItem>
+      <NavigationItem link="/about" exact>
+        My Work
+      </NavigationItem>
+      <NavigationItem link="/about" exact>
+        Contact
       </NavigationItem>
     </ul>
   );
