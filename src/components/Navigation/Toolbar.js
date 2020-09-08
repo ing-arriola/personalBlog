@@ -3,7 +3,6 @@ import NavigationItems from "./NavigationItems";
 const Toolbar = (props) => {
   return (
     <header className="toolbar">
-      <div></div>
       <nav>
         <NavigationItems />
       </nav>

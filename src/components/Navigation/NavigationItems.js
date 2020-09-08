@@ -10,10 +10,10 @@ const NavigationItems = () => {
       <NavigationItem link="/about" exact>
         About
       </NavigationItem>
-      <NavigationItem link="/about" exact>
+      <NavigationItem link="/work" exact>
         My Work
       </NavigationItem>
-      <NavigationItem link="/about" exact>
+      <NavigationItem link="/contact" exact>
         Contact
       </NavigationItem>
     </ul>
