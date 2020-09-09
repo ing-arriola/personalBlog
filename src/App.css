@@ -15,7 +15,7 @@ body {
 }
 
 .mainImage {
-  height: 100vh;
+  height: 90vh;
   background-image: linear-gradient(to right bottom, #73767ace, #161817e0),
     url(./images/frontPage.jpg);
   background-size: cover;
@@ -43,11 +43,12 @@ body {
 
 .primary-text-main {
   display: block;
+  color: #4ab7ff;
   font-size: 60px;
   font-weight: 600;
   letter-spacing: 10px;
   animation-name: moveInLeft;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-in;
 }
 
@@ -56,7 +57,7 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 15px;
-  animation: moveInRight 1s ease-in;
+  animation: moveInRight 1.5s ease-in;
 }
 
 @keyframes moveInLeft {
@@ -215,6 +216,10 @@ body {
     flex-direction: row;
   }
 
+  .toolbar DrawerToogle {
+    visibility: visible;
+  }
+
   .navigation-item {
     margin: 0;
     display: flex;
@@ -237,4 +242,28 @@ body {
     border-bottom: #40a4c8;
     color: #fff;
   }
+}
+
+/*Elements on sideDrawer*/
+
+.drawerToogle {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.drawerToogle div {
+  width: 90%;
+  height: 3px;
+  background-color: black;
+}
+
+.spacer {
+  flex: 1;
 }
