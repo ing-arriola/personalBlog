@@ -1,8 +1,8 @@
 import React from "react";
 
-const DrawerToogle = () => {
+const DrawerToogle = (props) => {
   return (
-    <div className="drawerToogle">
+    <div className="drawerToogle" onClick={props.clicked}>
       <div></div>
       <div></div>
       <div></div>

@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Aux from "./Aux";
 import Toolbar from "../components/Navigation/Toolbar";
+import SideDrawer from "../components/Navigation/SideDrawer/SideDrawer";
 const Layout = (props) => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const showMenuHandler = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <Aux>
-      <Toolbar />
+      <Toolbar show={showMenuHandler} />
       <main>{props.children}</main>
+      <SideDrawer show={showMenu} />
     </Aux>
   );
 };

@@ -216,10 +216,6 @@ body {
     flex-direction: row;
   }
 
-  .toolbar DrawerToogle {
-    visibility: visible;
-  }
-
   .navigation-item {
     margin: 0;
     display: flex;
@@ -261,7 +257,7 @@ body {
 .drawerToogle div {
   width: 90%;
   height: 3px;
-  background-color: black;
+  background-color: rgb(56, 56, 56);
 }
 
 .spacer {
