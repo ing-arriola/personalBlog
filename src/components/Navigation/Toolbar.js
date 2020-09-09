@@ -5,8 +5,8 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 const Toolbar = (props) => {
   return (
     <header className="toolbar">
-      <DrawerToogle clicked={props.showSideDrawer} />
-      <div className="spacer" />
+      <DrawerToogle clicked={props.show} />
+
       <nav>
         <NavigationItems />
       </nav>

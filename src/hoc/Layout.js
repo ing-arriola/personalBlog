@@ -13,7 +13,7 @@ const Layout = (props) => {
     <Aux>
       <Toolbar show={showMenuHandler} />
       <main>{props.children}</main>
-      <SideDrawer show={showMenu} />
+      <SideDrawer showB={showMenu} closed={showMenuHandler} />
     </Aux>
   );
 };

@@ -194,6 +194,7 @@ body {
     margin: 0 1.5rem;
     font-size: 1.6rem;
     padding: 0.68rem 10px;
+    color: red;
   }
 }
 
@@ -208,58 +209,34 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   }
 
+  .navigation-item a {
+    color: green;
+  }
+
+  .drawerToogle {
+    width: 40px;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    visibility: visible;
+  }
+
+  .lineBurger {
+    width: 90%;
+    height: 3px;
+    background-color: rgb(56, 56, 56);
+    visibility: visible;
+  }
   .toolbar nav {
     visibility: hidden;
   }
-
-  .navigation-items {
-    flex-direction: row;
-  }
-
-  .navigation-item {
-    margin: 0;
-    display: flex;
-    height: 100%;
-    width: auto;
-    align-items: center;
-  }
-
-  .navigation-item a {
-    color: #ffffff;
-    height: 100%;
-    padding: 16px 10px;
-    border-bottom: 4px solid transparent;
-  }
-
-  .navigation-item a:hover,
-  .navigation-item a:active,
-  .navigation-item a.active {
-    background: #8f5c2c;
-    border-bottom: #40a4c8;
-    color: #fff;
-  }
 }
 
-/*Elements on sideDrawer*/
-
-.drawerToogle {
-  width: 40px;
-  height: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.drawerToogle div {
-  width: 90%;
-  height: 3px;
-  background-color: rgb(56, 56, 56);
-}
-
-.spacer {
-  flex: 1;
+.drawerToggle {
+  visibility: hidden;
 }
