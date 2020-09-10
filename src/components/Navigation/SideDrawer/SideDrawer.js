@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import NavItems from "../NavigationItems";
 import Backdrop from "./Backdrop";
+
 const SideDrawer = (props) => {
   let attachedClasses = ["sideDrawer", "sideDrawer-close"];
 
