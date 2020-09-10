@@ -208,6 +208,7 @@ body {
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 90;
+  background: #fff;
 }
 
 .toolbar-logo {
@@ -223,6 +224,26 @@ body {
   visibility: hidden;
 }
 
+/*About Page*/
+#about-container {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 0px 30px 30px 30px;
+  display: flex;
+}
+#about-description {
+}
+
+#about-photo img {
+  margin: auto;
+  width: 70%;
+  border-radius: 50%;
+}
+
+/*Media Queries*/
 @media (max-width: 830px) {
   .navigation-item a {
     margin: 0 1rem;
