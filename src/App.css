@@ -5,9 +5,8 @@
 }
 
 body {
-  font-family: "Merriweather", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-style: italic;
   font-size: 16px;
   line-height: 1.7;
   color: #777;
@@ -22,6 +21,7 @@ body {
   background-position: top;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  border: rgb(117, 117, 117) 0.5px solid;
 }
 
 .text-box {
@@ -45,7 +45,7 @@ body {
   display: block;
   color: #4ab7ff;
   font-size: 60px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 10px;
   animation-name: moveInLeft;
   animation-duration: 1.5s;
@@ -164,18 +164,18 @@ body {
 .navigation-item a {
   text-decoration: none;
   color: rgb(56, 56, 56);
-  margin: 0 2rem;
-  font-size: 1.6rem;
+  margin: 0 1.9rem;
+  font-size: 1.5rem;
   padding: 0.68rem 10px;
 }
 
 .navigation-item a:hover {
-  background: rgb(56, 56, 56);
-  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .toolbar {
-  height: 2.9rem;
+  height: 50px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -186,19 +186,29 @@ body {
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 90;
-  background: #fff;
 }
 
-@media (max-width: 720px) {
+.toolbar-logo {
+  height: 25px;
+  width: auto;
+}
+
+.sideDrawer {
+  display: none;
+}
+
+.drawerToggle {
+  visibility: hidden;
+}
+
+@media (max-width: 830px) {
   .navigation-item a {
-    margin: 0 1.5rem;
-    font-size: 1.6rem;
-    padding: 0.68rem 10px;
-    color: red;
+    margin: 0 1rem;
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 650px) {
+@media screen and (max-width: 650px) {
   .mainImage {
     height: 85vh;
     background-image: linear-gradient(to right bottom, #73767ace, #161817e0),
@@ -209,11 +219,42 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   }
 
-  .navigation-item a {
-    color: green;
+  .sideDrawer {
+    display: block;
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background: #fff;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+  }
+
+  .navigation-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  .sideDrawer-open {
+    transform: translateX(0);
+  }
+
+  .sideDrawer-close {
+    transform: translateX(-100%);
   }
 
   .drawerToogle {
+    position: absolute;
+    left: 30px;
     width: 40px;
     height: 100%;
     display: flex;
@@ -235,8 +276,4 @@ body {
   .toolbar nav {
     visibility: hidden;
   }
-}
-
-.drawerToggle {
-  visibility: hidden;
 }
