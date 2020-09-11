@@ -1,13 +1,13 @@
 import React from "react";
 import jarriolaPhoto from "../../images/jaimeArriola.png";
-
+import * as logos from "../../images/about/index";
 const About = () => {
   return (
-    <div id="about-container">
-      <div id="about-photo">
+    <div className="about-container">
+      <div id="about-photo" className="about-container-column">
         <img src={jarriolaPhoto} className="" alt="JarriolaPhoto" />
       </div>
-      <div id="about-description">
+      <div id="about-description" className="about-container-column">
         <h2>Who am I?</h2>
         <p>
           I’m a FrontEnd Developer who enjoys creating intuitive, useful and
@@ -22,6 +22,16 @@ const About = () => {
           <li>Learn new technologies... because I love keep learning!</li>
           <li>Growth Opportunities</li>
         </ul>
+      </div>
+      <div id="about-skills">
+        <h2>My skills</h2>
+        <img className="about-skill-logo" src={logos.jsLogo} alt="JavaScript" />
+        <img className="about-skill-logo" src={logos.reactLogo} alt="React" />
+        <img className="about-skill-logo" src={logos.nodeLogo} alt="NodeJS" />
+        <img className="about-skill-logo" src={logos.html} alt="HTML" />
+        <img className="about-skill-logo" src={logos.cssLogo} alt="HTML" />
+        <img className="about-skill-logo" src={logos.sassLogo} alt="HTML" />
+        <img className="about-skill-logo" src={logos.mongoLogo} alt="HTML" />
       </div>
     </div>
   );
