@@ -228,17 +228,31 @@ body {
 #about-container {
   font-family: "Oxygen", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.7;
   color: #777;
   padding: 0px 30px 30px 30px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  /*grid-template-areas: "about-des about-img";*/
+
+  /*gap: 1rem;*/
 }
+
 #about-description {
+  color: #000;
+}
+
+#about-photo {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 #about-photo img {
-  margin: auto;
+  /*grid-area: about-img;*/
   width: 70%;
   border-radius: 50%;
 }
@@ -340,5 +354,20 @@ body {
   }
   .toolbar nav {
     visibility: hidden;
+  }
+
+  /*ABOUT*/
+  #about-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #about-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
   }
 }
