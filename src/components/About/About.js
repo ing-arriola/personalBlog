@@ -4,11 +4,11 @@ import * as logos from "../../images/about/index";
 const About = () => {
   return (
     <div className="about-container">
-      <div id="about-section-a">
-        <div id="about-photo" className="about-container-column">
+      <div id="about-container__info-section">
+        <div id="about-photo" className="info-section__column">
           <img src={jarriolaPhoto} className="" alt="JarriolaPhoto" />
         </div>
-        <div id="about-description" className="about-container-column">
+        <div id="about-description" className="info-section__column">
           <h2>Who am I?</h2>
           <p>
             I’m a FrontEnd Developer who enjoys creating intuitive, useful and
@@ -25,22 +25,18 @@ const About = () => {
           </ul>
         </div>
       </div>
-      <div id="about-skills">
-        <div id="about-skills-title">
+      <div id="about-container__skills-section">
+        <div id="skills-section__title">
           <h2>My Dev skills</h2>
         </div>
-        <div id="about-skills-logos">
-          <img
-            className="about-skill-logo"
-            src={logos.jsLogo}
-            alt="JavaScript"
-          />
-          <img className="about-skill-logo" src={logos.reactLogo} alt="React" />
-          <img className="about-skill-logo" src={logos.nodeLogo} alt="NodeJS" />
-          <img className="about-skill-logo" src={logos.html} alt="HTML" />
-          <img className="about-skill-logo" src={logos.cssLogo} alt="HTML" />
-          <img className="about-skill-logo" src={logos.sassLogo} alt="HTML" />
-          <img className="about-skill-logo" src={logos.mongoLogo} alt="HTML" />
+        <div id="skills--section__logos">
+          <img className="logos__logo" src={logos.jsLogo} alt="JavaScript" />
+          <img className="logos__logo" src={logos.reactLogo} alt="React" />
+          <img className="logos__logo" src={logos.nodeLogo} alt="NodeJS" />
+          <img className="logos__logo" src={logos.html} alt="HTML" />
+          <img className="logos__logo" src={logos.cssLogo} alt="HTML" />
+          <img className="logos__logo" src={logos.sassLogo} alt="HTML" />
+          <img className="logos__logo" src={logos.mongoLogo} alt="HTML" />
         </div>
       </div>
     </div>
