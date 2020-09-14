@@ -2,14 +2,14 @@ import React, { Fragment } from "react";
 import Project from "./SingleProject";
 const Projects = () => {
   return (
-    <Fragment>
+    <div className="projects-container">
       <Project />
       <Project />
       <Project />
       <Project />
       <Project />
       <Project />
-    </Fragment>
+    </div>
   );
 };
 
