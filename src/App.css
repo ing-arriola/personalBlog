@@ -302,7 +302,7 @@ body {
 /* SINGLE-PROJECT COMPONENT*/
 
 .project-card {
-  flex: 30%;
+  flex: 40%;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
   padding: 10px;

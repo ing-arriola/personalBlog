@@ -34,9 +34,10 @@ const About = () => {
           <img className="logos__logo" src={logos.reactLogo} alt="React" />
           <img className="logos__logo" src={logos.nodeLogo} alt="NodeJS" />
           <img className="logos__logo" src={logos.html} alt="HTML" />
-          <img className="logos__logo" src={logos.cssLogo} alt="HTML" />
-          <img className="logos__logo" src={logos.sassLogo} alt="HTML" />
-          <img className="logos__logo" src={logos.mongoLogo} alt="HTML" />
+          <img className="logos__logo" src={logos.cssLogo} alt="CSS" />
+          <img className="logos__logo" src={logos.sassLogo} alt="SASS" />
+          <img className="logos__logo" src={logos.mongoLogo} alt="MONGODB" />
+          <img className="logos__logo" src={logos.moodleLogo} alt="MOODLE" />
         </div>
       </div>
     </div>
