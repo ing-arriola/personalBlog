@@ -1,10 +1,15 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import Project from "./SingleProject";
 const Projects = () => {
   return (
-    <div>
-      <h1>THIS IS MY PROJECTS PAGE</h1>
-    </div>
+    <Fragment>
+      <Project />
+      <Project />
+      <Project />
+      <Project />
+      <Project />
+      <Project />
+    </Fragment>
   );
 };
 

@@ -150,6 +150,11 @@ body {
   color: rgb(56, 56, 56);
 }
 
+.btn--dark {
+  background: rgb(56, 56, 56);
+  color: #fff;
+}
+
 .btn::after {
   content: "";
   display: inline-block;
@@ -292,6 +297,14 @@ body {
   margin: 1.6rem;
   filter: grayscale(50%);
   height: 8rem;
+}
+
+/* PROJECT CARD*/
+.project-card {
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  padding: 10px;
+  margin: 10px;
 }
 
 /*Media Queries*/
