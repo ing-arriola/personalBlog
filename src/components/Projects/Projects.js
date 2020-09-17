@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Project from "./SingleProject";
+
 const Projects = () => {
   const projectsData = [
     {
