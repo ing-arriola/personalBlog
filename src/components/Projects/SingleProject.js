@@ -9,8 +9,12 @@ const SingleProject = (props) => {
       <div className="project-card__image-container">
         <img src={projectsPictures.gitFinder} className="project-card__image" />
       </div>
-      <div>
-        <p>{props.projectDescription}</p>
+      <div className="projects-card__techs">
+        {props.projectTechs.map((tech, index) => (
+          <span key={index} className={"projects-card--tech"}>
+            {tech}
+          </span>
+        ))}
       </div>
       <div>
         <a href="#" alt="none" className="btn--dark">

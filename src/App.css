@@ -153,11 +153,12 @@ body {
 .btn--dark {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1rem 3rem;
+  padding: 0.2rem 2rem;
   display: inline-block;
   border-radius: 10rem;
   background: rgb(56, 56, 56);
   color: #fff;
+  border: rgb(56, 56, 56) 0.1rem solid;
 }
 
 .btn--dark:hover {
@@ -201,6 +202,7 @@ body {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
   background-color: rgba(0, 0, 0, 0.233);
+  border-radius: 2rem;
 }
 
 .navigation-item a {
@@ -336,6 +338,19 @@ body {
   transform: scale(1.02);
   transition: all 0.3s linear;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.projects-card__techs {
+  margin-bottom: 3rem;
+}
+
+.projects-card--tech {
+  background-color: rgba(56, 56, 56, 0.76);
+  margin-right: 1.5rem;
+  color: #fff;
+  border-radius: 2rem;
+  padding: 0.3rem 0.3rem;
+  font-size: 1.3rem;
 }
 
 /*PROJECTS COMPONENT*/
