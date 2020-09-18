@@ -2,34 +2,36 @@ import React from "react";
 import Project from "./SingleProject";
 
 const Projects = () => {
+  console.log(process.env.REACT_APP_SPACE_ID);
+  console.log(process.env.REACT_APP_ACCESS_TOKEN);
   const projectsData = [
     {
       id: 1,
       name: "Github Finder",
       description:
         "This is a Front-end App which uses the Github API in order to get public data from github profiles",
-      techs: ["HTML", "CSS", "REACT JS", "AXIOS"],
+      techs: ["HTML", "CSS", "React", "AXIOS"],
     },
     {
       id: 2,
       name: "Bug Tracker",
       description:
         "This is a fullstack App made with MERN STACK and this allow to different users follow a flow of work ",
-      techs: ["HTML", "CSS", "REACT JS"],
+      techs: ["HTML", "CSS", "React"],
     },
     {
       id: 3,
       name: "Burger Builder",
       description:
         "This is a Front-end React App to build a hamburger, make an order and send a order with user's data to the backend (Firebase)",
-      techs: ["HTML", "CSS", "REACT JS", "AXIOS", "FIREBASE"],
+      techs: ["HTML", "CSS", "React", "AXIOS", "Firebase"],
     },
     {
       id: 4,
       name: "ONG Website",
       description:
         "React Front End App with an Strapi API which was made for free in order to help to the ONG 'Jovenes para el futuro ' ",
-      techs: ["HTML", "CSS", "REACT JS", "GATSBY", "GraphQL"],
+      techs: ["HTML", "CSS", "React", "Gatsby", "Contenful", "GraphQL"],
     },
   ];
 
