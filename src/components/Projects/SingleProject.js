@@ -18,7 +18,10 @@ const SingleProject = (props) => {
       </div>
       <div className="project-card__button-container">
         <a href="#" alt="none" className="btn--dark">
-          READ MORE
+          GITHUB REPO
+        </a>
+        <a href="#" alt="none" className="btn--dark">
+          LIVE DEMO
         </a>
       </div>
     </article>

@@ -2,8 +2,6 @@ import React from "react";
 import Project from "./SingleProject";
 import * as projectsPictures from "../../images/projects/projectsPictures";
 const Projects = () => {
-  console.log(process.env.REACT_APP_SPACE_ID);
-  console.log(process.env.REACT_APP_ACCESS_TOKEN);
   const projectsData = [
     {
       id: 1,
@@ -19,7 +17,7 @@ const Projects = () => {
       description:
         "This is a fullstack App made with MERN STACK and this allow to different users follow a flow of work ",
       picture: projectsPictures.burger,
-      techs: ["HTML", "CSS", "React"],
+      techs: ["HTML", "CSS", "Express", "Mongo DB", "React", "JWT"],
     },
     {
       id: 3,
