@@ -3,7 +3,7 @@ import * as projectsPictures from "../../images/projects/projectsPictures";
 const SingleProject = (props) => {
   return (
     <article className="project-card">
-      <div>
+      <div className="project-card__title">
         <h2>{props.projectName}</h2>
       </div>
       <div className="project-card__image-container">
@@ -16,7 +16,7 @@ const SingleProject = (props) => {
           </span>
         ))}
       </div>
-      <div>
+      <div className="project-card__button-container">
         <a href="#" alt="none" className="btn--dark">
           READ MORE
         </a>

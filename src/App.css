@@ -353,6 +353,12 @@ body {
   font-size: 1.3rem;
 }
 
+.project-card__button-container,
+.project-card__title {
+  display: flex;
+  justify-content: center;
+}
+
 /*PROJECTS COMPONENT*/
 /*
 .projects-container {
