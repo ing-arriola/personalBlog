@@ -1,6 +1,6 @@
 import React from "react";
 import Project from "./SingleProject";
-
+import * as projectsPictures from "../../images/projects/projectsPictures";
 const Projects = () => {
   console.log(process.env.REACT_APP_SPACE_ID);
   console.log(process.env.REACT_APP_ACCESS_TOKEN);
@@ -10,6 +10,7 @@ const Projects = () => {
       name: "Github Finder",
       description:
         "This is a Front-end App which uses the Github API in order to get public data from github profiles",
+      picture: projectsPictures.gitFinder,
       techs: ["HTML", "CSS", "React", "AXIOS"],
     },
     {
@@ -17,6 +18,7 @@ const Projects = () => {
       name: "Bug Tracker",
       description:
         "This is a fullstack App made with MERN STACK and this allow to different users follow a flow of work ",
+      picture: projectsPictures.burger,
       techs: ["HTML", "CSS", "React"],
     },
     {
@@ -24,6 +26,7 @@ const Projects = () => {
       name: "Burger Builder",
       description:
         "This is a Front-end React App to build a hamburger, make an order and send a order with user's data to the backend (Firebase)",
+      picture: projectsPictures.burger,
       techs: ["HTML", "CSS", "React", "AXIOS", "Firebase"],
     },
     {
@@ -31,6 +34,7 @@ const Projects = () => {
       name: "ONG Website",
       description:
         "React Front End App with an Strapi API which was made for free in order to help to the ONG 'Jovenes para el futuro ' ",
+      picture: projectsPictures.redJovenes,
       techs: ["HTML", "CSS", "React", "Gatsby", "Contenful", "GraphQL"],
     },
   ];
@@ -43,6 +47,7 @@ const Projects = () => {
           projectName={project.name}
           projectDescription={project.description}
           projectTechs={project.techs}
+          projectPicture={project.picture}
         />
       ))}
     </div>

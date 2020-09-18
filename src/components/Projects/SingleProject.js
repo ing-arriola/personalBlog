@@ -7,7 +7,7 @@ const SingleProject = (props) => {
         <h2>{props.projectName}</h2>
       </div>
       <div className="project-card__image-container">
-        <img src={projectsPictures.gitFinder} className="project-card__image" />
+        <img src={props.projectPicture} className="project-card__image" />
       </div>
       <div className="projects-card__techs">
         {props.projectTechs.map((tech, index) => (
