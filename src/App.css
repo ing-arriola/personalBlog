@@ -25,13 +25,13 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   border: rgb(117, 117, 117) 0.5px solid;
 }
 
 .header__text-box {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   /*The next line add a negative offset to get the text-box right 
   in the middle of the screen*/
@@ -242,10 +242,10 @@ body {
 
 .navigation-item a {
   text-decoration: none;
-
+  font-weight: 400;
   color: #fff;
   margin: 0 3.1rem;
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding: 1.1rem 1.6rem;
 }
 
@@ -269,8 +269,8 @@ body {
 
   background: linear-gradient(
     to bottom,
-    rgba(204, 203, 203, 0.507) 0%,
-    rgba(56, 56, 56, 0.63) 100%
+    rgba(204, 203, 203, 0.568) 0%,
+    rgba(44, 44, 44, 0.63) 100%
   );
 }
 
@@ -281,6 +281,12 @@ body {
 .toolbar-logo {
   height: 2.5rem;
   width: 2.5rem;
+}
+
+.toolbar-logo--white {
+  height: 2.5rem;
+  width: 2.5rem;
+  filter: contrast(0%);
 }
 
 .sideDrawer {
@@ -352,6 +358,7 @@ body {
   flex: 30%;
   margin: 1.6rem;
   filter: grayscale(50%);
+
   height: 8rem;
 }
 

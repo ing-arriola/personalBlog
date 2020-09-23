@@ -21,10 +21,20 @@ const SingleProject = (props) => {
         ))}
       </div>
       <div className="project-card__button-container">
-        <a href={props.link} alt="cardProject" className="btn--dark">
+        <a
+          href={props.projectLink}
+          alt="cardProject"
+          className="btn--dark"
+          target="_blank"
+        >
           GITHUB REPO
         </a>
-        <a href={props.link} alt="none" className="btn--dark">
+        <a
+          href={props.projectLink}
+          alt="none"
+          className="btn--dark"
+          target="_blank"
+        >
           LIVE DEMO
         </a>
       </div>

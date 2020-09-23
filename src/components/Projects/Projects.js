@@ -66,6 +66,7 @@ const Projects = () => {
           projectDescription={project.description}
           projectTechs={project.techs}
           projectPicture={project.picture}
+          projectLink={project.link}
         />
       ))}
     </motion.div>

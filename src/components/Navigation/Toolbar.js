@@ -21,9 +21,9 @@ const Toolbar = (props) => {
   return (
     <header className={navBackground === true ? "toolbar active " : "toolbar"}>
       <DrawerToogle clicked={props.show} />
-      <Logo className="toolbar-logo" />
+      <Logo color={navBackground} />
       <nav>
-        <NavigationItems />
+        <NavigationItems logoColor={navBackground} />
       </nav>
       {/* <a href={Pdf} target="_blank">
         CHECK MY RESUME

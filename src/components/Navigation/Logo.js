@@ -1,9 +1,13 @@
 import React from "react";
 import myLogo from "../../images/jarriolaLogo.png";
-const Logo = () => {
+const Logo = (props) => {
   return (
     <div className="logo">
-      <img className="toolbar-logo" src={myLogo} alt="Jarriola" />
+      <img
+        className={props.color ? "toolbar-logo--white" : "toolbar-logo"}
+        src={myLogo}
+        alt="Jarriola"
+      />
     </div>
   );
 };
