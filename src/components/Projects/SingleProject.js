@@ -26,6 +26,7 @@ const SingleProject = (props) => {
           alt="cardProject"
           className="btn--dark"
           target="_blank"
+          rel="noreferrer noopener"
         >
           GITHUB REPO
         </a>
@@ -34,6 +35,7 @@ const SingleProject = (props) => {
           alt="none"
           className="btn--dark"
           target="_blank"
+          rel="noreferrer noopener"
         >
           LIVE DEMO
         </a>

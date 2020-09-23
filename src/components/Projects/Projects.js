@@ -49,10 +49,16 @@ const Projects = () => {
   const containerVariants = {
     hidden: {
       opacity: 0,
+      y: "-100vh",
     },
     visible: {
       opacity: 1,
-      transition: { ease: "easeIn", duration: 0.5 },
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        duration: 1.3,
+      },
     },
   };
 
@@ -61,6 +67,7 @@ const Projects = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="hidden"
       className="projects-container"
     >
       {projectsData.map((project) => (
