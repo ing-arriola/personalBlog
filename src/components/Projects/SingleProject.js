@@ -22,7 +22,7 @@ const SingleProject = (props) => {
       </div>
       <div className="project-card__button-container">
         <a
-          href={props.projectLink}
+          href={props.projectRepository}
           alt="cardProject"
           className="btn--dark"
           target="_blank"

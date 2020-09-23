@@ -12,6 +12,7 @@ const Projects = () => {
       picture: projectsPictures.gitFinder,
       techs: ["HTML", "CSS", "React", "AXIOS", "Hooks"],
       link: "https://githubfinderjarriola.netlify.app/",
+      repository: "https://github.com/ing-arriola/githubFinder",
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ const Projects = () => {
       picture: projectsPictures.tracker,
       techs: ["Mongo", "Express", "React", "Node", "JWT"],
       link: "https://desolate-fortress-08367.herokuapp.com/login",
+      repository: "https://github.com/ing-arriola/bugTrackerApp",
     },
     {
       id: 3,
@@ -30,6 +32,7 @@ const Projects = () => {
       picture: projectsPictures.burger,
       techs: ["HTML", "CSS", "React", "AXIOS", "Firebase"],
       link: "",
+      repository: "https://github.com/ing-arriola/BurgerBuilderApp",
     },
     {
       id: 4,
@@ -39,6 +42,7 @@ const Projects = () => {
       picture: projectsPictures.redJovenes,
       techs: ["React", "Gatsby", "Contenful", "GraphQL"],
       link: "",
+      repository: "https://github.com/ing-arriola/gatsbyOng",
     },
   ];
 
@@ -67,6 +71,7 @@ const Projects = () => {
           projectTechs={project.techs}
           projectPicture={project.picture}
           projectLink={project.link}
+          projectRepository={project.repository}
         />
       ))}
     </motion.div>

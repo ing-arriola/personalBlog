@@ -382,6 +382,12 @@ body {
   transform: scale(1.02);
   transition: all 0.3s linear;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    to top,
+    rgba(204, 203, 203, 0.568) 0%,
+    rgba(44, 44, 44, 0.63) 100%
+  );
+  color: #fff;
 }
 
 .project-card__image-container {
