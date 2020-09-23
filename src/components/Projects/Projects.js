@@ -10,14 +10,16 @@ const Projects = () => {
         "This is a Front-end App which uses the Github API in order to get public data from github profiles",
       picture: projectsPictures.gitFinder,
       techs: ["HTML", "CSS", "React", "AXIOS"],
+      link: "https://githubfinderjarriola.netlify.app/",
     },
     {
       id: 2,
       name: "Bug Tracker",
       description:
         "This is a fullstack App made with MERN STACK and this allow to different users follow a flow of work ",
-      picture: projectsPictures.burger,
-      techs: ["HTML", "CSS", "Express", "Mongo DB", "React", "JWT"],
+      picture: projectsPictures.tracker,
+      techs: ["HTML", "CSS", "Express", "Mongo", "React", "JWT"],
+      link: "https://desolate-fortress-08367.herokuapp.com/login",
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ const Projects = () => {
         "This is a Front-end React App to build a hamburger, make an order and send a order with user's data to the backend (Firebase)",
       picture: projectsPictures.burger,
       techs: ["HTML", "CSS", "React", "AXIOS", "Firebase"],
+      link: "",
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ const Projects = () => {
         "React Front End App with an Strapi API which was made for free in order to help to the ONG 'Jovenes para el futuro ' ",
       picture: projectsPictures.redJovenes,
       techs: ["HTML", "CSS", "React", "Gatsby", "Contenful", "GraphQL"],
+      link: "",
     },
   ];
 

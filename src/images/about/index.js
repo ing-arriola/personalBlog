@@ -6,3 +6,4 @@ export const cssLogo = require("./css-3.svg");
 export const sassLogo = require("./sass.svg");
 export const mongoLogo = require("./mongodb.svg");
 export const moodleLogo = require("./moodle.svg");
+export const gatsbyLogo = require("./gatsby.svg");

@@ -15,7 +15,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 5rem 3rem 3rem 3rem;
+  /*padding: 5rem 3rem 3rem 3rem;*/
 }
 
 .header {
@@ -200,18 +200,52 @@ body {
   display: flex;
 }
 
-.navigation-items a:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-  background-color: rgba(0, 0, 0, 0.233);
-  border-radius: 2rem;
+@-webkit-keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.hvr-push {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-push:hover,
+.hvr-push:focus,
+.hvr-push:active {
+  -webkit-animation-name: hvr-push;
+  animation-name: hvr-push;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 
 .navigation-item a {
   text-decoration: none;
-  color: rgb(56, 56, 56);
+
+  color: #fff;
   margin: 0 3.1rem;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   padding: 1.1rem 1.6rem;
 }
 
@@ -228,11 +262,20 @@ body {
   left: 0;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   padding: 0 2rem;
   box-sizing: border-box;
   z-index: 90;
-  background: #fff;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(204, 203, 203, 0.507) 0%,
+    rgba(56, 56, 56, 0.63) 100%
+  );
+}
+
+.toolbar.active {
+  background: #000;
 }
 
 .toolbar-logo {
@@ -257,6 +300,7 @@ body {
 }
 
 #about-container__info-section {
+  padding: 5rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -315,7 +359,7 @@ body {
 /*PROJECTS COMPONENT*/
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 3fr));
   gap: 1.5rem;
   width: 95vw;
 }
@@ -363,10 +407,13 @@ body {
   font-size: 1.3rem;
 }
 
-.project-card__button-container,
 .project-card__title {
+  text-align: center;
+}
+
+.project-card__button-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 /*Media Queries*/

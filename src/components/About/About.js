@@ -36,6 +36,7 @@ const About = () => {
           <img className="logos__logo" src={logos.html} alt="HTML" />
           <img className="logos__logo" src={logos.cssLogo} alt="CSS" />
           <img className="logos__logo" src={logos.sassLogo} alt="SASS" />
+          <img className="logos__logo" src={logos.gatsbyLogo} alt="GATSBY" />
           <img className="logos__logo" src={logos.mongoLogo} alt="MONGODB" />
           <img className="logos__logo" src={logos.moodleLogo} alt="MOODLE" />
         </div>

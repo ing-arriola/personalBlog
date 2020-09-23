@@ -1,5 +1,5 @@
 import React from "react";
-import * as projectsPictures from "../../images/projects/projectsPictures";
+
 const SingleProject = (props) => {
   return (
     <article className="project-card">
