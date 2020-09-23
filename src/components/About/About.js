@@ -1,9 +1,14 @@
 import React from "react";
 import jarriolaPhoto from "../../images/jaimeArriola.png";
 import * as logos from "../../images/about/index";
+import { motion } from "framer-motion";
 const About = () => {
   return (
-    <div className="about-container">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="about-container"
+    >
       <div id="about-container__info-section">
         <div id="about-photo" className="info-section__column">
           <img src={jarriolaPhoto} className="" alt="JarriolaPhoto" />
@@ -41,7 +46,7 @@ const About = () => {
           <img className="logos__logo" src={logos.moodleLogo} alt="MOODLE" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

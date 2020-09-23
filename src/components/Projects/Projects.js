@@ -1,5 +1,6 @@
 import React from "react";
 import Project from "./SingleProject";
+import { motion } from "framer-motion";
 import * as projectsPictures from "../../images/projects/projectsPictures";
 const Projects = () => {
   const projectsData = [
@@ -9,7 +10,7 @@ const Projects = () => {
       description:
         "This is a Front-end App which uses the Github API in order to get public data from github profiles",
       picture: projectsPictures.gitFinder,
-      techs: ["HTML", "CSS", "React", "AXIOS"],
+      techs: ["HTML", "CSS", "React", "AXIOS", "Hooks"],
       link: "https://githubfinderjarriola.netlify.app/",
     },
     {
@@ -18,7 +19,7 @@ const Projects = () => {
       description:
         "This is a fullstack App made with MERN STACK and this allow to different users follow a flow of work ",
       picture: projectsPictures.tracker,
-      techs: ["HTML", "CSS", "Express", "Mongo", "React", "JWT"],
+      techs: ["Mongo", "Express", "React", "Node", "JWT"],
       link: "https://desolate-fortress-08367.herokuapp.com/login",
     },
     {
@@ -36,13 +37,28 @@ const Projects = () => {
       description:
         "React Front End App with an Strapi API which was made for free in order to help to the ONG 'Jovenes para el futuro ' ",
       picture: projectsPictures.redJovenes,
-      techs: ["HTML", "CSS", "React", "Gatsby", "Contenful", "GraphQL"],
+      techs: ["React", "Gatsby", "Contenful", "GraphQL"],
       link: "",
     },
   ];
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: { ease: "easeIn", duration: 0.5 },
+    },
+  };
+
   return (
-    <div className="projects-container">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="projects-container"
+    >
       {projectsData.map((project) => (
         <Project
           key={project.id}
@@ -52,7 +68,7 @@ const Projects = () => {
           projectPicture={project.picture}
         />
       ))}
-    </div>
+    </motion.div>
   );
 };
 

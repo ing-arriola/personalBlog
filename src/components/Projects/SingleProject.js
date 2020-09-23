@@ -7,7 +7,11 @@ const SingleProject = (props) => {
         <h2>{props.projectName}</h2>
       </div>
       <div className="project-card__image-container">
-        <img src={props.projectPicture} className="project-card__image" />
+        <img
+          src={props.projectPicture}
+          className="project-card__image"
+          alt="ProjectPicture"
+        />
       </div>
       <div className="projects-card__techs">
         {props.projectTechs.map((tech, index) => (
@@ -17,10 +21,10 @@ const SingleProject = (props) => {
         ))}
       </div>
       <div className="project-card__button-container">
-        <a href="#" alt="none" className="btn--dark">
+        <a href={props.link} alt="cardProject" className="btn--dark">
           GITHUB REPO
         </a>
-        <a href="#" alt="none" className="btn--dark">
+        <a href={props.link} alt="none" className="btn--dark">
           LIVE DEMO
         </a>
       </div>

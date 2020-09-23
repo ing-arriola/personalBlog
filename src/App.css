@@ -15,7 +15,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  /*padding: 5rem 3rem 3rem 3rem;*/
+  padding: 4rem 3rem 3rem 3rem;
 }
 
 .header {
@@ -296,7 +296,6 @@ body {
   font-size: 2rem;
   line-height: 1.7;
   color: #000;
-  padding: 0px 3rem 3rem 3rem;
 }
 
 #about-container__info-section {
@@ -361,7 +360,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 3fr));
   gap: 1.5rem;
-  width: 95vw;
+  padding: 0px 3rem 3rem 3rem;
 }
 /* SINGLE-PROJECT COMPONENT*/
 .project-card {
