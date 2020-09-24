@@ -4,6 +4,10 @@ import * as logos from "../../images/about/index";
 import { motion } from "framer-motion";
 const About = () => {
   return (
+    <div>
+
+      
+    </div>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
