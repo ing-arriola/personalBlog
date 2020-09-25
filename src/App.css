@@ -26,6 +26,7 @@ body {
 }
 
 .big-name {
+  color: #000;
   font-size: 10rem;
   font-weight: 300;
 }
@@ -380,6 +381,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(30rem, 3fr));
   gap: 1.5rem;
   padding: 0px 3rem 3rem 3rem;
+  animation: moveFromBottom 0.7s ease-in;
 }
 /* SINGLE-PROJECT COMPONENT*/
 .project-card {
