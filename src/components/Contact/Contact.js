@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [visible, setVisible] = useState(true);

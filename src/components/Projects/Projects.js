@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Project from "./SingleProject";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import * as projectsPictures from "../../images/projects/projectsPictures";
 const Projects = () => {
   const projectsData = [

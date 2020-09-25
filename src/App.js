@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
@@ -9,7 +9,6 @@ import Layout from "./hoc/Layout";
 import { AnimatePresence } from "framer-motion";
 
 const App = () => {
-  const location = useLocation();
   let routes = (
     <AnimatePresence exitBeforeEnter>
       <Switch>

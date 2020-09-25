@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -9,9 +8,9 @@ const Home = () => {
         <h1 className="header__primary-text">
           <span className="heading-primary--main">Jaime Arriola</span>
 
-          <motion.span className="heading-primary--sub">
+          <span className="heading-primary--sub">
             Turning your ideas into your perfect website
-          </motion.span>
+          </span>
         </h1>
         <NavLink
           to="/work"
