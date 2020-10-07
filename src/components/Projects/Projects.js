@@ -31,7 +31,7 @@ const Projects = () => {
         "This is a Front-end React App to build a hamburger, make an order and send a order with user's data to the backend (Firebase)",
       picture: projectsPictures.burger,
       techs: ["HTML", "CSS", "React", "AXIOS", "Firebase"],
-      link: "",
+      link: "https://jdevburgerbuilder.netlify.app/",
       repository: "https://github.com/ing-arriola/BurgerBuilderApp",
     },
     {

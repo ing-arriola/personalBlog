@@ -27,19 +27,48 @@ const Contact = () => {
           </motion.p>
         </div>
       ) : (
-        <motion.div>
-          <h1>Let me know how can I help you out :)</h1>
-          <motion.form>
+        <div className="form-container">
+          <div className="contact-title">
+            <h1>Let me know how can I help you</h1>
+            <p>
+              Thanks for consider reach me, I'm sure you are going to enjoy my
+              work for you
+            </p>
+          </div>
+          <form className="contact-form">
             <label>Name</label>
-            <input type="input" name="name" id="email" required></input>
+            <input
+              type="input"
+              name="name"
+              id="email"
+              placeholder="Name"
+              required
+            ></input>
             <label>Email</label>
-            <input type="email" name="email" id="email" required></input>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            ></input>
             <label>Subject</label>
-            <input type="text" name="subject" id="subject" required></input>
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              placeholder="Subject"
+              required
+            ></input>
             <label>Your message</label>
-            <textarea name="" id=""></textarea>
-          </motion.form>
-        </motion.div>
+            <textarea
+              name="message"
+              placeholder="Please, type here how can I help you"
+              id="message"
+            ></textarea>
+            <button>Send</button>
+          </form>
+        </div>
       )}
     </motion.div>
   );
