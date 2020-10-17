@@ -30,7 +30,7 @@ const Contact = () => {
         <div className="form-container">
           <div className="contact-title">
             <h1>Let me know how can I help you</h1>
-            <p>
+            <p className="contac-descirption">
               Thanks for consider reach me, I'm sure you are going to enjoy my
               work for you
             </p>
@@ -66,7 +66,7 @@ const Contact = () => {
               placeholder="Please, type here how can I help you"
               id="message"
             ></textarea>
-            <button>Send</button>
+            <button className="form-button">Send</button>
           </form>
         </div>
       )}
