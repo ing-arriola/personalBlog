@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavigationItems from "./NavigationItems";
 import DrawerToogle from "./SideDrawer/DrawerToogle";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 /*import Pdf from "../../docs/htmlUdemy.pdf";*/
 
@@ -21,7 +22,10 @@ const Toolbar = (props) => {
   return (
     <header className={navBackground === true ? "toolbar active " : "toolbar"}>
       <DrawerToogle clicked={props.show} />
-      <Logo color={navBackground} />
+      <Link to="/">
+        <Logo color={navBackground} />
+      </Link>
+
       <nav>
         <NavigationItems logoColor={navBackground} />
       </nav>
