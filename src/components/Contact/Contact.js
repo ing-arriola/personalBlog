@@ -21,7 +21,7 @@ const Contact = () => {
             variants={effect1}
             initial="visible"
             animate="hidden"
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.6 }}
           >
             Jaime Arriola
           </motion.p>
@@ -31,8 +31,8 @@ const Contact = () => {
           <div className="contact-title">
             <h1>Let me know how can I help you</h1>
             <p className="contac-descirption">
-              Thanks for consider reach me, I'm sure you are going to enjoy my
-              work for you
+              Thanks for consider reach me, I'd be happy to answer your hiring
+              questions
             </p>
           </div>
           <form className="contact-form">

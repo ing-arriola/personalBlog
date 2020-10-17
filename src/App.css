@@ -29,6 +29,7 @@ body {
   color: #000;
   font-size: 10rem;
   font-weight: 300;
+  text-align: center;
 }
 
 .header {
@@ -318,7 +319,6 @@ body {
 }
 
 #about-container__info-section {
-  padding: 5rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -326,6 +326,10 @@ body {
 .info-section__column {
   flex: 50%;
   padding: 2rem;
+}
+
+.info-section__column > p {
+  text-align: justify;
 }
 
 #about-photo {
@@ -455,6 +459,7 @@ body {
 
 .contac-descirption {
   text-align: inherit;
+  font-size: 2rem;
   margin-bottom: 2rem;
   padding: 1rem;
 }
@@ -500,6 +505,12 @@ textarea {
 
 /*Media Queries*/
 
+@media (max-width: 1177px) {
+  .heading-primary--main {
+    background-size: 1rem 20rem;
+  }
+}
+
 @media (max-width: 860px) {
   .navigation-item a {
     margin: 0 1.6rem;
@@ -524,9 +535,12 @@ textarea {
   .project-card__image {
     width: 80%;
   }
+  .contact-container {
+    margin-top: 3rem;
+  }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 702px) {
   .header {
     height: 85vh;
     background-image: linear-gradient(to right bottom, #73767ace, #161817e0),
@@ -555,6 +569,7 @@ textarea {
     top: 0;
     z-index: 200;
     background: #fff;
+    color: black;
     padding: 3.2rem 1.6rem;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
@@ -571,7 +586,12 @@ textarea {
   }
 
   .navigation-item {
-    margin: 1rem;
+    margin: 3rem 0;
+  }
+
+  .navigation-item a {
+    color: #000;
+    font-size: 3rem;
   }
 
   .sideDrawer-open {
@@ -628,5 +648,10 @@ textarea {
 
   .form-container {
     width: 90%;
+  }
+
+  /*PROJECT CARD*/
+  .project-card {
+    width: 45rem;
   }
 }

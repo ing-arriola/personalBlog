@@ -21,7 +21,7 @@ const About = () => {
             variants={effectName}
             initial="visible"
             animate="hidden"
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.6 }}
           >
             Jaime Arriola
           </motion.p>
