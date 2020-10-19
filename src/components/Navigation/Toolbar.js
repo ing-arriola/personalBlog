@@ -4,8 +4,6 @@ import DrawerToogle from "./SideDrawer/DrawerToogle";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 
-/*import Pdf from "../../docs/htmlUdemy.pdf";*/
-
 const Toolbar = (props) => {
   const [navBackground, setNavBackground] = useState(false);
 
@@ -29,9 +27,6 @@ const Toolbar = (props) => {
       <nav>
         <NavigationItems logoColor={navBackground} />
       </nav>
-      {/* <a href={Pdf} target="_blank">
-        CHECK MY RESUME
-      </a>*/}
     </header>
   );
 };

@@ -32,9 +32,10 @@ const Home = () => {
           </div>
           <div className="data--text">
             <p>
-              If you want to improve some process on your bussiness by using a
-              customized web app or just want a website that make your bussiness
-              stand out, I'll be happy to make that happen{" "}
+              If you want to improve a process on your bussiness by using a
+              customized web application or just want a website that make your
+              bussiness stand out, I'll be happy to help you to achieve your
+              goal
             </p>
           </div>
         </div>
