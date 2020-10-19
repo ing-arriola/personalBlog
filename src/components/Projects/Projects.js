@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Project from "./SingleProject";
 import { motion } from "framer-motion";
 import * as projectsPictures from "../../images/projects/projectsPictures";
+import brand from "../../images/jarriolaLogoBig.png";
 const Projects = () => {
   const projectsData = [
     {
@@ -80,14 +81,15 @@ const Projects = () => {
   return (
     <motion.div>
       {showTitle ? (
-        <div className="contact-container big-name ">
+        <div className="name-container big-name ">
           <motion.p
             variants={effectName}
             initial="visible"
             animate="hidden"
             transition={{ delay: 0.6 }}
           >
-            Jaime Arriola
+            <img src={brand} alt="Jaime Arriola Logo"></img>
+            <p>Jaime Arriola</p>
           </motion.p>
         </div>
       ) : (

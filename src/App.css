@@ -17,7 +17,7 @@ body {
   color: #000;
 }
 
-.contact-container {
+.name-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -421,7 +421,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 3fr));
   gap: 1.5rem;
-  padding: 0px 3rem 3rem 3rem;
+  padding: 0px 10rem 3rem 10rem;
   animation: moveFromBottom 0.7s ease-in;
   margin-top: 5rem;
 }

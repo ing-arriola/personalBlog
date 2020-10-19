@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import brand from "../../images/jarriolaLogoBig.png";
 
 const Contact = () => {
   const [visible, setVisible] = useState(true);
@@ -14,7 +15,7 @@ const Contact = () => {
   };
 
   return (
-    <motion.div className="contact-container">
+    <motion.div className="name-container">
       {visible ? (
         <div className="big-name">
           <motion.p
@@ -23,7 +24,8 @@ const Contact = () => {
             animate="hidden"
             transition={{ delay: 0.6 }}
           >
-            Jaime Arriola
+            <img src={brand} alt="Jaime Arriola Logo"></img>
+            <p>Jaime Arriola</p>
           </motion.p>
         </div>
       ) : (
