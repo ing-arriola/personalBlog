@@ -16,13 +16,16 @@ const Toolbar = (props) => {
   };
 
   window.addEventListener("scroll", changeNavbarBackground);
+  console.log(props.show);
 
   return (
     <header className={navBackground === true ? "toolbar active " : "toolbar"}>
-      <DrawerToogle clicked={props.show} />
-      <Link to="/">
-        <Logo color={navBackground} />
-      </Link>
+      <div className="toolbar__logo-or-Burger">
+        <DrawerToogle clicked={props.show} className="logo-or-Burger" />
+        <Link to="/">
+          <Logo color={navBackground} />
+        </Link>
+      </div>
 
       <nav>
         <NavigationItems logoColor={navBackground} />
