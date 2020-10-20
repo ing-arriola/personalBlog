@@ -12,9 +12,9 @@ const Layout = (props) => {
   };
 
   return (
-    <Aux>
+    <Aux className="container">
       <Toolbar show={showMenuHandler} />
-      <main className=".pages-main">{props.children}</main>
+      <main className="pages-main">{props.children}</main>
       <SideDrawer showB={showMenu} closed={showMenuHandler} />
       <Footer />
     </Aux>

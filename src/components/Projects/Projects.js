@@ -49,10 +49,10 @@ const Projects = () => {
       id: 4,
       name: "Natours",
       description: " Project Description ",
-      picture: projectsPictures.redJovenes,
-      techs: ["React", "Gatsby", "Contenful", "GraphQL"],
-      link: "",
-      repository: "https://github.com/ing-arriola/gatsbyOng",
+      picture: projectsPictures.natours,
+      techs: ["HTML", "CSS", "SASS"],
+      link: "https://ing-arriola.github.io/ToursWebPage/",
+      repository: "https://github.com/ing-arriola/ToursWebPage",
     },
   ];
 
@@ -71,7 +71,7 @@ const Projects = () => {
   };
 
   return (
-    <motion.div className="pages-main">
+    <motion.div>
       <motion.div className="projects-container">
         {projectsData.map((project) => (
           <Project

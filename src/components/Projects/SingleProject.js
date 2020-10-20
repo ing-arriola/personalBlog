@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub, FaDesktop, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const SingleProject = (props) => {
   return (
@@ -28,7 +29,7 @@ const SingleProject = (props) => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          GITHUB REPO
+          <FaGithub /> CODE
         </a>
         <a
           href={props.projectLink}
@@ -37,7 +38,7 @@ const SingleProject = (props) => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          LIVE DEMO
+          <FaDesktop /> DEMO
         </a>
       </div>
     </article>

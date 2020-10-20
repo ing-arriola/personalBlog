@@ -7,6 +7,7 @@
 html {
   font-size: 62.5%;
   font-family: "Lato", sans-serif;
+  min-height: 100%;
 }
 
 body {
@@ -15,9 +16,18 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #000;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.container {
+  min-height: 100%;
+}
+
+.pages-main {
+  overflow: auto;
+  padding-bottom: 100px;
 }
 
 .name-container {
@@ -217,6 +227,7 @@ body {
 
 .info-section {
   margin: 4rem 3rem 0 3rem;
+  margin-bottom: 5rem;
 }
 
 .info-section--title {
@@ -229,12 +240,21 @@ body {
 .info-section--data {
   display: flex;
 
-  height: 30rem;
+  height: 20rem;
 }
 
 .data--picture {
   width: 60%;
   margin-right: 3rem;
+}
+
+.data--picture--rigth {
+  width: 60%;
+  margin-left: 3rem;
+}
+
+.data--picture--rigth > img {
+  width: 100%;
 }
 
 .data--picture > img {
@@ -386,7 +406,6 @@ body {
   font-size: 2rem;
   line-height: 1.7;
   color: #000;
-  min-height: 100vh;
 }
 
 #about-container__info-section {
@@ -451,9 +470,6 @@ body {
 }
 
 /*PROJECTS COMPONENT*/
-.pages-main {
-  min-height: 100vh;
-}
 
 .projects-container {
   display: grid;
@@ -607,7 +623,7 @@ textarea {
   align-items: center;
   position: relative;
 
-  bottom: -2rem;
+  clear: both;
 }
 
 .main-footer__personal-brand {
