@@ -19,6 +19,7 @@ const App = () => {
       </Switch>
     </AnimatePresence>
   );
+
   return (
     <div>
       <Layout>{routes}</Layout>

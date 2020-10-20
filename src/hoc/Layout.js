@@ -3,6 +3,7 @@ import Aux from "./Aux";
 import Toolbar from "../components/Navigation/Toolbar";
 import SideDrawer from "../components/Navigation/SideDrawer/SideDrawer";
 import Footer from "../components/Navigation/Footer";
+
 const Layout = (props) => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -13,7 +14,7 @@ const Layout = (props) => {
   return (
     <Aux>
       <Toolbar show={showMenuHandler} />
-      <main>{props.children}</main>
+      <main className=".pages-main">{props.children}</main>
       <SideDrawer showB={showMenu} closed={showMenuHandler} />
       <Footer />
     </Aux>

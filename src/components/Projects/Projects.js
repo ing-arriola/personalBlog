@@ -45,24 +45,16 @@ const Projects = () => {
       link: "",
       repository: "https://github.com/ing-arriola/gatsbyOng",
     },
+    {
+      id: 4,
+      name: "Natours",
+      description: " Project Description ",
+      picture: projectsPictures.redJovenes,
+      techs: ["React", "Gatsby", "Contenful", "GraphQL"],
+      link: "",
+      repository: "https://github.com/ing-arriola/gatsbyOng",
+    },
   ];
-  /*
-  const containerVariants = {
-    hidden: {
-      opacity: 0,
-      y: "-100vh",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        duration: 1.3,
-      },
-    },
-  };
-*/
 
   const [showTitle, setShowTitle] = useState(true);
   setTimeout(() => {
@@ -80,33 +72,19 @@ const Projects = () => {
 
   return (
     <motion.div className="pages-main">
-      {showTitle ? (
-        <div className="name-container big-name ">
-          <motion.p
-            variants={effectName}
-            initial="visible"
-            animate="hidden"
-            transition={{ delay: 0.6 }}
-          >
-            <img src={brand} alt="Jaime Arriola Logo"></img>
-            <p>Jaime Arriola</p>
-          </motion.p>
-        </div>
-      ) : (
-        <motion.div className="projects-container">
-          {projectsData.map((project) => (
-            <Project
-              key={project.id}
-              projectName={project.name}
-              projectDescription={project.description}
-              projectTechs={project.techs}
-              projectPicture={project.picture}
-              projectLink={project.link}
-              projectRepository={project.repository}
-            />
-          ))}
-        </motion.div>
-      )}
+      <motion.div className="projects-container">
+        {projectsData.map((project) => (
+          <Project
+            key={project.id}
+            projectName={project.name}
+            projectDescription={project.description}
+            projectTechs={project.techs}
+            projectPicture={project.picture}
+            projectLink={project.link}
+            projectRepository={project.repository}
+          />
+        ))}
+      </motion.div>
     </motion.div>
   );
 };
