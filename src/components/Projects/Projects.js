@@ -79,7 +79,7 @@ const Projects = () => {
   };
 
   return (
-    <motion.div>
+    <motion.div className="pages-main">
       {showTitle ? (
         <div className="name-container big-name ">
           <motion.p

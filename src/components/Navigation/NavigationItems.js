@@ -34,7 +34,11 @@ const NavigationItems = (props) => {
         href={Pdf}
         rel="noreferrer noopener"
         target="_blank"
-        className={props.logoColor ? " resume-btn " : "resume-btn "}
+        className={
+          props.logoColor
+            ? " resume-btn hvr-push black "
+            : "resume-btn hvr-push  "
+        }
       >
         My Resume
       </a>

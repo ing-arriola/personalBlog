@@ -15,6 +15,9 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .name-container {
@@ -347,9 +350,6 @@ body {
   visibility: hidden;
 }
 
-.toolbar__logo-or-Burger {
-}
-
 .resume-btn {
   text-decoration: none;
   color: #fff;
@@ -364,12 +364,29 @@ body {
   font-size: 1.6rem;
 }
 
+.resume-btn:hover {
+  color: #000;
+  background: rgb(245, 245, 245);
+  transition: transform 0.5s ease-in;
+  border: #000 solid 1px;
+}
+
+.resume-btn.black {
+  background: #ccc;
+  color: #000;
+}
+
+.resume-btn.black:hover {
+  background: #fff;
+}
+
 /*About Page*/
 .about-container {
   margin-top: 5rem;
   font-size: 2rem;
   line-height: 1.7;
   color: #000;
+  min-height: 100vh;
 }
 
 #about-container__info-section {
@@ -434,6 +451,10 @@ body {
 }
 
 /*PROJECTS COMPONENT*/
+.pages-main {
+  min-height: 100vh;
+}
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 3fr));
@@ -566,6 +587,8 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  margin-top: auto;
 }
 
 .main-footer__personal-brand {
