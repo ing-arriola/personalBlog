@@ -11,8 +11,7 @@ const Contact = () => {
       <div className="contact-title">
         <h1>Let me know how can I help you</h1>
         <p className="contac-descirption">
-          Thanks for consider reach me, I'd be happy to answer your hiring
-          questions
+          Thanks for contacting me, I'd be happy to answer your hiring questions
         </p>
       </div>
       <form className="contact-form">
