@@ -77,7 +77,7 @@ body {
 .heading-primary--main {
   display: block;
   color: #ffffff;
-  font-size: 6rem;
+  font-size: clamp(3rem, 4.5rem, 6rem);
   font-weight: 300;
 
   letter-spacing: 1rem;
@@ -104,7 +104,7 @@ body {
 
 .heading-primary--sub {
   display: block;
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 1.2rem, 2rem);
   font-weight: 400;
   letter-spacing: 1rem;
   animation: moveInRight 1s ease-in;
@@ -146,6 +146,18 @@ body {
   0% {
     opacity: 0;
     transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
   }
 
   100% {
@@ -239,7 +251,7 @@ body {
 
 .info-section--data {
   display: flex;
-
+  flex-direction: row;
   height: 20rem;
 }
 
@@ -548,6 +560,7 @@ body {
   flex-direction: column;
   text-align: center;
   min-height: 100vh;
+  animation: moveFromTop 0.9s cubic-bezier(0.53, -0.49, 0.52, 1.67);
 }
 
 .contact-title {
@@ -668,6 +681,20 @@ textarea {
 
   .heading-primary--main:hover {
     background-size: 1rem 40rem;
+  }
+
+  .info-section {
+    margin-top: 6rem;
+  }
+
+  .info-section--data {
+    flex-direction: column;
+    height: 30rem;
+  }
+
+  .data--picture {
+    margin-right: 0;
+    margin: 0 auto;
   }
 
   .logo img {

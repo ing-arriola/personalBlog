@@ -42,28 +42,32 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <section className="info-section">
-        <div className="info-section--title">
-          <p>It's not just a matter of building a website</p>
-        </div>
-        <div className="info-section--data">
-          <div className="data--text">
-            <p>
-              I like to get things done but for me something is done just when
-              it has high quality, and high quality means:
-            </p>
-            <ul>
-              <li>Find important information fast</li>
-              <li> Communicate your ideas on a easy way </li>
-              <li> Communicate your ideas on a easy way </li>
-            </ul>
-          </div>
-          <div className="data--picture--rigth">
-            <img src={infoPicture2} className="" alt="infoPicture" />
-          </div>
-        </div>
-      </section>
+      {/*
+ 
+ <section className="info-section">
+   <div className="info-section--title">
+     <p>It's not just a matter of building a website</p>
+   </div>
+   <div className="info-section--data">
+     <div className="data--text">
+       <p>
+         I like to get things done but for me something is done just when
+         it has high quality, and high quality means:
+       </p>
+       <ul>
+         <li>Find important information fast</li>
+         <li> Communicate your ideas on a easy way </li>
+         <li> Communicate your ideas on a easy way </li>
+       </ul>
+     </div>
+     <div className="data--picture--rigth">
+       <img src={infoPicture2} className="" alt="infoPicture" />
+     </div>
+   </div>
+ </section>
+ 
+ */}
+      .
     </div>
   );
 };
