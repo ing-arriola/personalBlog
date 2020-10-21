@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Project from "./SingleProject";
 import { motion } from "framer-motion";
 import * as projectsPictures from "../../images/projects/projectsPictures";
-import brand from "../../images/jarriolaLogoBig.png";
+
 const Projects = () => {
   const projectsData = [
     {
@@ -55,20 +55,6 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/ToursWebPage",
     },
   ];
-
-  const [showTitle, setShowTitle] = useState(true);
-  setTimeout(() => {
-    setShowTitle(false);
-  }, 1200);
-
-  const effectName = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-    },
-  };
 
   return (
     <motion.div>

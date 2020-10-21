@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import NavigationItem from "./NavigationItem";
-import Pdf from "../../docs/htmlUdemy.pdf";
+import Pdf from "../../docs/Jaime Arriola .pdf";
 import { FaEnvelope, FaLaptopCode, FaUserAlt, FaHome } from "react-icons/fa";
 
 const NavigationItems = (props) => {

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import jarriolaPhoto from "../../images/jaimeArriola.png";
 import * as logos from "../../images/about/index";
-import brand from "../../images/jarriolaLogoBig.png";
+
 import { motion } from "framer-motion";
 const About = () => {
   return (
@@ -22,11 +22,11 @@ const About = () => {
             effective way.
           </p>
           <h2>What am I looking for?</h2>
-          <p>I’m looking for a remote job only which allows me:</p>
+          <p>I’m looking for a position job which allows me:</p>
           <ul>
             <li>Get out from my confort zone</li>
             <li>Propose innovative ideas</li>
-            <li>Learn new technologies... because I love keep learning!</li>
+            <li>Learn new technologies, because I love keep learning!</li>
             <li>Growth Opportunities</li>
           </ul>
         </div>

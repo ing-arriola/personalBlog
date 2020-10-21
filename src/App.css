@@ -27,7 +27,7 @@ body {
 
 .pages-main {
   overflow: auto;
-  padding-bottom: 100px;
+  padding-bottom: 5rem;
 }
 
 .name-container {
@@ -658,6 +658,18 @@ textarea {
 .main-footer__social > a > svg:hover {
   transform: scale(1.3);
   transition: 0.3s transform ease-in;
+}
+
+.social-twitter:hover {
+  color: aqua;
+}
+
+.social-linkedIn:hover {
+  color: #0e76a8;
+}
+
+.social-youtube:hover {
+  color: #c4302b;
 }
 
 /*Media Queries*/

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaDesktop, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaDesktop } from "react-icons/fa";
 
 const SingleProject = (props) => {
   return (

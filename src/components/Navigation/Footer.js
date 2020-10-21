@@ -22,21 +22,21 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <FaTwitter size={25} />
+          <FaTwitter className="social-twitter" size={25} />
         </a>
         <a
-          href="https://www.linkedin.com/in/jaime-arriola-1457bb1b2"
+          href="http://www.linkedin.com/in/jarriola-dev"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <FaLinkedin size={25} />
+          <FaLinkedin className="social-linkedIn" size={25} />
         </a>
         <a
           href="https://www.youtube.com/channel/UCTMHspxBI1kIxqIL0cVattA"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <FaYoutube size={25} />
+          <FaYoutube className="social-youtube" size={25} />
         </a>
       </div>
     </div>

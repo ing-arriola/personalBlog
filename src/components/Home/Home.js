@@ -1,6 +1,5 @@
 import React from "react";
 import infoPicture from "../../images/section-info.jpg";
-import infoPicture2 from "../../images/matter.jpg";
 
 import { NavLink } from "react-router-dom";
 
@@ -46,7 +45,7 @@ const Home = () => {
  
  <section className="info-section">
    <div className="info-section--title">
-     <p>It's not just a matter of building a website</p>
+     <p>It's not just a matter of "have a website"</p>
    </div>
    <div className="info-section--data">
      <div className="data--text">
@@ -55,10 +54,13 @@ const Home = () => {
          it has high quality, and high quality means:
        </p>
        <ul>
-         <li>Find important information fast</li>
-         <li> Communicate your ideas on a easy way </li>
-         <li> Communicate your ideas on a easy way </li>
+         <li>People can access your website from any device: computer, smartphone or tablets.</li>
+         <li> I passed a lot of time paying attention to details, because your website must be perfect otherwise your customers can loose trust on you </li>
+         <li> Your web aplication solves a real problem for you in a meaninful way </li>
        </ul>
+       <p>
+       So I'll spend as much time as necessary to get a high quality webiste for you
+       </p>
      </div>
      <div className="data--picture--rigth">
        <img src={infoPicture2} className="" alt="infoPicture" />
