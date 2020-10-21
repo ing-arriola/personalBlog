@@ -49,9 +49,9 @@ const Contact = () => {
           placeholder="Please, type here how can I help you"
           id="message"
         ></textarea>
-        <div>
-          <div data-netlify-recaptcha="true"></div>
-        </div>
+
+        <div data-netlify-recaptcha="true"></div>
+
         <button type="submit" className="form-button">
           Send
         </button>
