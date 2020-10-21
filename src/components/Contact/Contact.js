@@ -2,7 +2,12 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="form-container">
+    <div
+      className="form-container"
+      method="POST"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+    >
       <div className="contact-title">
         <h1>Let me know how can I help you</h1>
         <p className="contac-descirption">
@@ -41,7 +46,12 @@ const Contact = () => {
           placeholder="Please, type here how can I help you"
           id="message"
         ></textarea>
-        <button className="form-button">Send</button>
+        <div>
+          <div data-netlify-recaptcha="true"></div>
+        </div>
+        <button type="submit" className="form-button">
+          Send
+        </button>
       </form>
     </div>
   );
