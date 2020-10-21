@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.375996b1.chunk.css",
+    "main.js": "/static/js/main.ea02b1b6.chunk.js",
+    "main.js.map": "/static/js/main.ea02b1b6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6b3488d1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6b3488d1.js.map",
+    "static/js/2.14464438.chunk.js": "/static/js/2.14464438.chunk.js",
+    "static/js/2.14464438.chunk.js.map": "/static/js/2.14464438.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6f1f27312759d026f5717488fc8f19e3.js": "/precache-manifest.6f1f27312759d026f5717488fc8f19e3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.375996b1.chunk.css.map": "/static/css/main.375996b1.chunk.css.map",
+    "static/js/2.14464438.chunk.js.LICENSE.txt": "/static/js/2.14464438.chunk.js.LICENSE.txt",
+    "static/media/burgerBuilder.png": "/static/media/burgerBuilder.2aa1cb6f.png",
+    "static/media/css-3.svg": "/static/media/css-3.d3ad67fa.svg",
+    "static/media/App.css": "/static/media/frontPage.6962bac8.jpg",
+    "static/media/gatsby.svg": "/static/media/gatsby.aec012ae.svg",
+    "static/media/githubFinder.png": "/static/media/githubFinder.30f6a602.png",
+    "static/media/html-5.svg": "/static/media/html-5.24845c5c.svg",
+    "static/media/htmlUdemy.pdf": "/static/media/htmlUdemy.329a6897.pdf",
+    "static/media/jaimeArriola.png": "/static/media/jaimeArriola.61be435f.png",
+    "static/media/javascript.svg": "/static/media/javascript.87711407.svg",
+    "static/media/matter.jpg": "/static/media/matter.04601a7f.jpg",
+    "static/media/mongodb.svg": "/static/media/mongodb.2aa7f7b5.svg",
+    "static/media/moodle.svg": "/static/media/moodle.7d5a2f41.svg",
+    "static/media/natours.png": "/static/media/natours.5f301abf.png",
+    "static/media/nodejs.svg": "/static/media/nodejs.f434bfbb.svg",
+    "static/media/react.svg": "/static/media/react.9a28da9f.svg",
+    "static/media/redJovenes.png": "/static/media/redJovenes.cf63ceb8.png",
+    "static/media/sass.svg": "/static/media/sass.470548b4.svg",
+    "static/media/section-info.jpg": "/static/media/section-info.aaaf1ab0.jpg",
+    "static/media/tracker.png": "/static/media/tracker.a6ea82c0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6b3488d1.js",
+    "static/js/2.14464438.chunk.js",
+    "static/css/main.375996b1.chunk.css",
+    "static/js/main.ea02b1b6.chunk.js"
+  ]
+}
