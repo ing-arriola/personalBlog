@@ -10,7 +10,26 @@ import {
 } from "react-icons/fa";
 
 import { motion } from "framer-motion";
+
 const About = () => {
+  const employers = [
+    {
+      name: "Aeroman",
+      opinion:
+        "Jaime Arriola  customized Aeroman LMS using HTML, CSS and adding customized functions with JavaScript",
+    },
+    {
+      name: "DataGuard",
+      opinion:
+        "Jaime worked for one of our most important customers showing responsibility, dedication and high commitment ",
+    },
+    {
+      name: "Colegio Ceren ",
+      opinion:
+        "When Jaime  worked in our company on the development of  VBA Applications & teaching programming and electronics, he showed  responsibility, Honesty and Respect. ",
+    },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -49,8 +68,8 @@ const About = () => {
           </ul>
         </div>
       </div>
-      <div id="about-container__skills-section">
-        <div id="skills-section__title">
+      <section id="about-container__skills-section">
+        <div id="section-title">
           <h2>My Tech stack</h2>
         </div>
         <div id="skills--section__logos">
@@ -64,7 +83,25 @@ const About = () => {
           <img className="logos__logo" src={logos.mongoLogo} alt="MONGODB" />
           <img className="logos__logo" src={logos.moodleLogo} alt="MOODLE" />
         </div>
-      </div>
+      </section>
+
+      <section>
+        <div id="section-title">
+          <div className="card-title">
+            <h2>Recommendations letters </h2>
+          </div>
+        </div>
+
+        <div className="projects-container">
+          {employers.map((employer) => (
+            <div className="employer-card">
+              <h2>{employer.name}</h2>
+
+              <p>{employer.opinion}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </motion.div>
   );
 };

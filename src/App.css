@@ -566,6 +566,19 @@ body {
   text-align: center;
 }
 
+.card-title {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.employer-card {
+  border: 1px solid #eee;
+  border-radius: 2rem;
+  box-shadow: 0 0.2rem 0.3rem #ccc;
+  padding: 1rem;
+  margin: 0 1rem;
+}
+
 .project-card__button-container {
   display: flex;
   justify-content: space-between;
@@ -593,16 +606,6 @@ body {
   justify-content: center;
   align-items: center;
   font-size: clamp(0.8rem, 1.5rem, 2.3rem);
-}
-
-.contact-title > div {
-  display: inherit;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact-title > div > svg {
-  margin-left: 1rem;
 }
 
 .contac-descirption {
@@ -781,6 +784,10 @@ textarea {
     font-size: 3rem;
   }
 
+  .resume-btn {
+    font-size: 3rem;
+  }
+
   .sideDrawer-open {
     transform: translateX(0);
   }
@@ -837,6 +844,16 @@ textarea {
     align-items: center;
     margin: auto;
   }
+
+  #about-description {
+    padding: 0 5rem;
+  }
+
+  #about-description > h2 {
+    text-align: center;
+  }
+
+  /*PROJECTS*/
 
   .projects-container {
     display: flex;
