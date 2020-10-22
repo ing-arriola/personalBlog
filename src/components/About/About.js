@@ -1,6 +1,9 @@
 import React from "react";
 import jarriolaPhoto from "../../images/jaimeArriola.png";
 import * as logos from "../../images/about/index";
+import ae from "../../docs/aeroman.pdf";
+import dg from "../../docs/dataguard.pdf";
+import crn from "../../docs/ceren.pdf";
 
 import {
   FaRegLightbulb,
@@ -12,11 +15,13 @@ import {
 import { motion } from "framer-motion";
 
 const About = () => {
+  const letters = [ae, dg, crn];
+
   const employers = [
     {
       name: "Aeroman",
       opinion:
-        "Jaime Arriola  customized Aeroman LMS using HTML, CSS and adding customized functions with JavaScript",
+        "Jaime Arriola  customized Aeroman LMS using HTML, CSS and adding customized functions with JavaScript, His experience & personal qualities will make him a powerful asset",
     },
     {
       name: "DataGuard",
@@ -26,10 +31,10 @@ const About = () => {
     {
       name: "Colegio Ceren ",
       opinion:
-        "When Jaime  worked in our company on the development of  VBA Applications & teaching programming and electronics, he showed  responsibility, Honesty and Respect. ",
+        "When Jaime  worked in our company on the development of  VBA Applications & teaching programming and electronics, also He showed  responsibility, Honesty and Respect. ",
     },
   ];
-
+  //{Pdf}
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -85,19 +90,31 @@ const About = () => {
         </div>
       </section>
 
-      <section>
-        <div id="section-title">
+      <section className="letters-section">
+        <div>
           <div className="card-title">
             <h2>Recommendations letters </h2>
           </div>
         </div>
 
         <div className="projects-container">
-          {employers.map((employer) => (
+          {employers.map((employer, index) => (
             <div className="employer-card">
-              <h2>{employer.name}</h2>
-
-              <p>{employer.opinion}</p>
+              <div className="card-title">
+                <h2>{employer.name}</h2>
+              </div>
+              <div>
+                <p>{employer.opinion}</p>
+              </div>
+              <div className="read-more ">
+                <a
+                  href={letters[index]}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  Leer mas
+                </a>
+              </div>
             </div>
           ))}
         </div>
