@@ -1,10 +1,14 @@
 import React from "react";
 
+import { FaRegSmileBeam } from "react-icons/fa";
 const Contact = () => {
   return (
     <div className="form-container">
       <div className="contact-title">
-        <h1>Let me know how can I help you</h1>
+        <h1>
+          Let me know how can I help you <FaRegSmileBeam />{" "}
+        </h1>
+
         <p className="contac-descirption">
           Thanks for contacting me, I'd be happy to answer your hiring questions
         </p>

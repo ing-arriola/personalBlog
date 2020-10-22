@@ -2,6 +2,7 @@ import React from "react";
 import Project from "./SingleProject";
 import { motion } from "framer-motion";
 import * as projectsPictures from "../../images/projects/projectsPictures";
+import { FaLaptop } from "react-icons/fa";
 
 const Projects = () => {
   const projectsData = [
@@ -58,6 +59,12 @@ const Projects = () => {
 
   return (
     <motion.div>
+      <div className="projects-title">
+        <h1>
+          Check my best projects <FaLaptop />
+        </h1>
+      </div>
+
       <motion.div className="projects-container">
         {projectsData.map((project) => (
           <Project

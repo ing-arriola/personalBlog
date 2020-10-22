@@ -2,6 +2,13 @@ import React from "react";
 import jarriolaPhoto from "../../images/jaimeArriola.png";
 import * as logos from "../../images/about/index";
 
+import {
+  FaRegLightbulb,
+  FaGraduationCap,
+  FaChartLine,
+  FaRegSmile,
+} from "react-icons/fa";
+
 import { motion } from "framer-motion";
 const About = () => {
   return (
@@ -24,16 +31,27 @@ const About = () => {
           <h2>What am I looking for?</h2>
           <p>I’m looking for a position job which allows me:</p>
           <ul>
-            <li>Get out from my confort zone</li>
-            <li>Propose innovative ideas</li>
-            <li>Learn new technologies, because I love keep learning!</li>
-            <li>Growth Opportunities</li>
+            <li>
+              {" "}
+              <FaRegSmile /> Get out from my confort zone
+            </li>
+            <li>
+              <FaRegLightbulb /> Propose innovative ideas{" "}
+            </li>
+            <li>
+              <FaGraduationCap /> Learn new technologies, because I love keep
+              learning!{" "}
+            </li>
+            <li>
+              {" "}
+              <FaChartLine /> Growth Opportunities
+            </li>
           </ul>
         </div>
       </div>
       <div id="about-container__skills-section">
         <div id="skills-section__title">
-          <h2>My Dev skills</h2>
+          <h2>My Tech stack</h2>
         </div>
         <div id="skills--section__logos">
           <img className="logos__logo" src={logos.jsLogo} alt="JavaScript" />

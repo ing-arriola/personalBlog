@@ -444,6 +444,10 @@ body {
   text-align: justify;
 }
 
+.info-section__column ul {
+  list-style: none;
+}
+
 #about-photo {
   display: flex;
   margin: auto;
@@ -492,6 +496,13 @@ body {
 }
 
 /*PROJECTS COMPONENT*/
+
+.projects-title {
+  margin-top: 8rem;
+  text-align: center;
+
+  animation: moveFromBottom 0.7s ease-in;
+}
 
 .projects-container {
   display: grid;
@@ -566,7 +577,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 8rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8rem 5rem 0 5rem;
   flex-direction: column;
   text-align: center;
   min-height: 100vh;
@@ -575,6 +588,21 @@ body {
 
 .contact-title {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.8rem, 1.5rem, 2.3rem);
+}
+
+.contact-title > div {
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title > div > svg {
+  margin-left: 1rem;
 }
 
 .contac-descirption {
@@ -829,5 +857,10 @@ textarea {
 
   .form-container {
     width: 90%;
+  }
+
+  /*CONTACT*/
+  .contact-form {
+    width: 80%;
   }
 }
