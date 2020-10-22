@@ -250,32 +250,42 @@ body {
 }
 
 .info-section--data {
-  display: flex;
-  flex-direction: row;
-  height: 20rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  align-items: center;
+  justify-content: center;
 }
 
 .data--picture {
-  width: 60%;
-  margin-right: 3rem;
+  width: 100%;
+  text-align: center;
 }
 
 .data--picture--rigth {
-  width: 60%;
-  margin-left: 3rem;
+  width: 100%;
+  text-align: center;
 }
 
 .data--picture--rigth > img {
-  width: 100%;
+  width: 60%;
 }
 
 .data--picture > img {
-  width: 100%;
+  width: 60%;
 }
 
-.data--text {
+.data--text--right,
+.data--text--left {
   font-size: 2.5rem;
   text-align: justify;
+}
+
+.data--text--right {
+  padding-right: 5rem;
+}
+
+.data--text--left {
+  padding-left: 5rem;
 }
 
 /*NAV BAR*/
@@ -697,11 +707,6 @@ textarea {
 
   .info-section {
     margin-top: 6rem;
-  }
-
-  .info-section--data {
-    flex-direction: column;
-    height: 30rem;
   }
 
   .data--picture {

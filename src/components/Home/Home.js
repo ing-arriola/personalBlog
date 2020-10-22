@@ -1,5 +1,6 @@
 import React from "react";
 import infoPicture from "../../images/section-info.jpg";
+import infoPicture2 from "../../images/section-info2.jpg";
 
 import { NavLink } from "react-router-dom";
 
@@ -31,7 +32,7 @@ const Home = () => {
           <div className="data--picture">
             <img src={infoPicture} className="" alt="infoPicture" />
           </div>
-          <div className="data--text">
+          <div className="data--text--right">
             <p>
               If you want to improve a process on your bussiness by using a
               customized web application or just want a website that make your
@@ -41,34 +42,34 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/*
- 
- <section className="info-section">
-   <div className="info-section--title">
-     <p>It's not just a matter of "have a website"</p>
-   </div>
-   <div className="info-section--data">
-     <div className="data--text">
-       <p>
-         I like to get things done but for me something is done just when
-         it has high quality, and high quality means:
-       </p>
-       <ul>
-         <li>People can access your website from any device: computer, smartphone or tablets.</li>
-         <li> I passed a lot of time paying attention to details, because your website must be perfect otherwise your customers can loose trust on you </li>
-         <li> Your web aplication solves a real problem for you in a meaninful way </li>
-       </ul>
-       <p>
-       So I'll spend as much time as necessary to get a high quality webiste for you
-       </p>
-     </div>
-     <div className="data--picture--rigth">
-       <img src={infoPicture2} className="" alt="infoPicture" />
-     </div>
-   </div>
- </section>
- 
- */}
+      <section className="info-section">
+        <div className="info-section--title">
+          <p>It's not just a matter of "have a website"</p>
+        </div>
+        <div className="info-section--data">
+          <div className="data--text--left">
+            <p>
+              I my opinion something is only done when it has been done
+              correctly, so I will deliver a website on which:
+            </p>
+            <ul>
+              <li>
+                Everyone will able to access your website from any device:
+                computers, smartphones or tablets.
+              </li>
+              <li>
+                {" "}
+                I will spend a lot of time on all of the details in order to
+                make your website perfect. The quality of your website will give
+                your customers confidence in you.{" "}
+              </li>
+            </ul>
+          </div>
+          <div className="data--picture--rigth">
+            <img src={infoPicture2} className="" alt="infoPicture" />
+          </div>
+        </div>
+      </section>
       .
     </div>
   );
