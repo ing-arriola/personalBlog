@@ -10,7 +10,8 @@ const Contact = () => {
         </h1>
 
         <p className="contac-descirption">
-          Thanks for contacting me, I'd be happy to answer your hiring questions
+          Thanks for contacting me, I'd be happy to respond your questions about
+          hiring me
         </p>
       </div>
       <form

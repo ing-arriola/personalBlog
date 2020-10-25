@@ -43,7 +43,7 @@ const Projects = () => {
         "React Front End App with an Strapi API which was made for free in order to help to the ONG 'Jovenes para el futuro ' ",
       picture: projectsPictures.redJovenes,
       techs: ["React", "Gatsby", "Contenful", "GraphQL"],
-      link: "",
+      link: "https://rdjfuturo.netlify.app/",
       repository: "https://github.com/ing-arriola/gatsbyOng",
     },
     {
