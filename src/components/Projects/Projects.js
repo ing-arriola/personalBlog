@@ -47,13 +47,22 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/gatsbyOng",
     },
     {
-      id: 4,
+      id: 5,
       name: "Natours",
       description: " Project Description ",
       picture: projectsPictures.natours,
       techs: ["HTML", "CSS", "SASS"],
       link: "https://ing-arriola.github.io/ToursWebPage/",
       repository: "https://github.com/ing-arriola/ToursWebPage",
+    },
+    {
+      id: 6,
+      name: "Social Page",
+      description: " Project Description ",
+      picture: projectsPictures.landing,
+      techs: ["React", "React-Bootstrap"],
+      link: "https://landing-social.netlify.app/",
+      repository: "https://github.com/ing-arriola/looplab",
     },
   ];
 

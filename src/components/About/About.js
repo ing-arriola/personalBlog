@@ -97,7 +97,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="projects-container">
+        <div className="recomendations-container">
           {employers.map((employer, index) => (
             <div className="employer-card">
               <div className="card-title">

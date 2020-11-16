@@ -499,6 +499,15 @@ body {
   height: 8rem;
 }
 
+.recomendations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 3fr));
+  gap: 1.5rem;
+  padding: 0px 10rem 3rem 10rem;
+  animation: moveFromBottom 0.7s ease-in;
+  margin-top: 5rem;
+}
+
 /*PROJECTS COMPONENT*/
 
 .projects-title {
@@ -515,7 +524,9 @@ body {
   padding: 0px 10rem 3rem 10rem;
   animation: moveFromBottom 0.7s ease-in;
   margin-top: 5rem;
+  min-height: 100vh;
 }
+
 /* SINGLE-PROJECT COMPONENT*/
 .project-card {
   border: 1px solid #eee;
@@ -523,6 +534,7 @@ body {
   box-shadow: 0 0.2rem 0.3rem #ccc;
   padding: 1rem;
   margin: 1rem;
+  max-height: 38rem;
 }
 
 .project-card:hover {
@@ -531,8 +543,8 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
   background: linear-gradient(
     to top,
-    rgba(204, 203, 203, 0.568) 0%,
-    rgba(44, 44, 44, 0.63) 100%
+    rgba(204, 203, 203, 0.342) 0%,
+    rgba(71, 71, 71, 0.432) 100%
   );
   color: #fff;
 }
@@ -541,7 +553,7 @@ body {
   display: block;
   overflow: hidden;
   box-sizing: border-box;
-  height: 22rem;
+  height: 18rem;
 }
 
 .project-card__image {
