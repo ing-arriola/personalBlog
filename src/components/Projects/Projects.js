@@ -64,6 +64,15 @@ const Projects = () => {
       link: "https://landing-social.netlify.app/",
       repository: "https://github.com/ing-arriola/looplab",
     },
+    {
+      id: 7,
+      name: "Restaurant JS",
+      description: " Project Description ",
+      picture: projectsPictures.restaurant,
+      techs: ["React", "React-Bootstrap"],
+      link: "https://reactjs-restaurant.netlify.app/",
+      repository: "https://github.com/ing-arriola/company-site",
+    },
   ];
 
   return (
