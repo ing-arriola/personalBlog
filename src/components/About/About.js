@@ -80,6 +80,9 @@ const About = () => {
         <div id="skills--section__logos">
           <img className="logos__logo" src={logos.jsLogo} alt="JavaScript" />
           <img className="logos__logo" src={logos.reactLogo} alt="React" />
+          <img className="logos__logo" src={logos.flutterLogo} alt="Flutter" />
+          <img className="logos__logo" src={logos.graphqlLogo} alt="GraphQL" />
+          <img className="logos__logo" src={logos.storybookLogo} alt="Storybook" />
           <img className="logos__logo" src={logos.nodeLogo} alt="NodeJS" />
           <img className="logos__logo" src={logos.html} alt="HTML" />
           <img className="logos__logo" src={logos.cssLogo} alt="CSS" />
