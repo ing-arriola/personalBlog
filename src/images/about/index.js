@@ -7,3 +7,6 @@ export const sassLogo = require("./sass.svg");
 export const mongoLogo = require("./mongodb.svg");
 export const moodleLogo = require("./moodle.svg");
 export const gatsbyLogo = require("./gatsby.svg");
+export const flutterLogo = require("./flutter.svg");
+export const storybookLogo = require("./storybook.svg");
+export const graphqlLogo = require("./graphql.svg");
