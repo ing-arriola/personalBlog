@@ -500,12 +500,12 @@ body {
 }
 
 .recomendations-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 3fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0px 10rem 3rem 10rem;
   animation: moveFromBottom 0.7s ease-in;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 /*PROJECTS COMPONENT*/
@@ -599,11 +599,12 @@ body {
 }
 
 .employer-card {
+  width: 400px;
   border: 1px solid #eee;
   border-radius: 2rem;
   box-shadow: 0 0.2rem 0.3rem #ccc;
   padding: 1rem;
-  margin: 0 1rem;
+  margin: 1rem 2.5rem;
   position: relative;
 }
 
@@ -929,8 +930,9 @@ textarea {
     display: grid;
     align-items: center;
     transition: none;
-    margin: 1rem auto;
-    font-size: 3rem;
+    margin: 0rem auto;
+    padding: 0;
+    font-size: 2.5rem;
     color: #fff;
     font-weight: 500;
     border-radius: inherit;
@@ -938,7 +940,7 @@ textarea {
     top: auto;
     bottom: 0;
     left: 0;
-    height: 50%;
+    height: 20%;
     width: 50%;
     z-index: 1;
     opacity: 1;
@@ -985,12 +987,19 @@ textarea {
 }
 
 @media screen and (max-width: 550px) {
+  .about-container__skills-section {
+    padding: 0;
+  }
+  .recomendations-container{
+    padding: 1rem;
+  }
   .employer-card {
     width: 100%;
   }
   .read-more {
     width: 100%;
-    font-size: 2.3rem;
+    font-size: 2rem;
+    height: 10%;
   }
   .read-more > a {
     width: 100%;
