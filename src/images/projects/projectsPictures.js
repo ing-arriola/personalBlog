@@ -5,3 +5,4 @@ export const tracker = require("./tracker.png");
 export const natours = require("./natours.png");
 export const landing = require("./socialLanding.png");
 export const restaurant = require("./restaurant.png");
+export const CoinTicker = require("./CoinTicker.png");
