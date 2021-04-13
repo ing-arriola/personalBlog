@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Project from "./SingleProject";
 import { motion } from "framer-motion";
+import Select from "react-select"
 import * as projectsPictures from "../../images/projects/projectsPictures";
 import { FaLaptop } from "react-icons/fa";
 
@@ -73,31 +74,84 @@ const Projects = () => {
       link: "https://reactjs-restaurant.netlify.app/",
       repository: "https://github.com/ing-arriola/company-site",
     },
+    {
+      id: 8,
+      name: "Bitcoin Ticker",
+      description: " Project Description ",
+      picture: projectsPictures.CoinTicker,
+      techs: ["Flutter","Dart"],
+      link: "https://www.youtube.com/watch?v=qIGBm68wR20",
+      repository: "https://github.com/ing-arriola/BitcoinFlutter",
+    },
   ];
 
+  const [selectedOption, setSelectedOption] = useState({ value: 'All', label: 'All' });
+
+  const options = [
+    { value: 'All', label: 'All' },
+    { value: 'SASS', label: 'Static' },
+    { value: 'React', label: 'React' },
+    { value: 'Flutter', label: 'Flutter' },
+  ];
+
+  const filterProjects = () => {
+     const check = selectedOption.value !== "All" ? true : false
+     const projects =  check ? projectsData.filter(item => item.techs.includes(selectedOption.value)) : projectsData
+     const projectsToShow = projects.map(project => (
+      <Project
+      key={project.id}
+      projectName={project.name}
+      projectDescription={project.description}
+      projectTechs={project.techs}
+      projectPicture={project.picture}
+      projectLink={project.link}
+      projectRepository={project.repository}
+    />
+     ))
+
+      return projectsToShow
+    }
+  
   return (
     <motion.div>
       <div className="projects-title">
         <h1>
           Check my best projects <FaLaptop />
         </h1>
+        <div className="projects-filter" >
+          <label className="projects-filter-label" >Select Technology:</label>
+          <Select 
+            defaultValue={selectedOption}
+            onChange={setSelectedOption}
+            options={options}
+          />
+        </div>
+        
       </div>
+      
+
 
       <motion.div className="projects-container">
-        {projectsData.map((project) => (
-          <Project
-            key={project.id}
-            projectName={project.name}
-            projectDescription={project.description}
-            projectTechs={project.techs}
-            projectPicture={project.picture}
-            projectLink={project.link}
-            projectRepository={project.repository}
-          />
-        ))}
+        
+        {filterProjects() }
       </motion.div>
     </motion.div>
   );
 };
 
 export default Projects;
+
+/*
+{(projectsData.filter(project => project.techs.includes(selectedOption) )).map((item) => (
+          <Project
+          key={item.id}
+          projectName={item.name}
+          projectDescription={item.description}
+          projectTechs={item.techs}
+          projectPicture={item.picture}
+          projectLink={item.link}
+          projectRepository={item.repository}
+        />
+        ))}
+
+*/
