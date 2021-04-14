@@ -436,7 +436,10 @@ body {
 }
 
 .info-section__column {
+  display: flex;
+  flex-direction: column;
   flex: 50%;
+  justify-content: center;
   padding: 2rem;
 }
 
