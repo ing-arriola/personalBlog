@@ -13,7 +13,7 @@ const Projects = () => {
       description:
         "This is a Front-end App which uses the Github API in order to get public data from github profiles",
       picture: projectsPictures.gitFinder,
-      techs: ["HTML", "CSS", "React", "AXIOS", "Hooks"],
+      techs: ["HTML-CSS", "React", "Hooks","Rest API"],
       link: "https://githubfinderjarriola.netlify.app/",
       repository: "https://github.com/ing-arriola/githubFinder",
     },
@@ -23,7 +23,7 @@ const Projects = () => {
       description:
         "This is a fullstack App made with MERN STACK and this allow to different users follow a flow of work ",
       picture: projectsPictures.tracker,
-      techs: ["Mongo", "Express", "React", "Node", "JWT"],
+      techs: ["Mongo", "Express", "React", "Node"],
       link: "https://desolate-fortress-08367.herokuapp.com/login",
       repository: "https://github.com/ing-arriola/bugTrackerApp",
     },
@@ -33,7 +33,7 @@ const Projects = () => {
       description:
         "This is a Front-end React App to build a hamburger, make an order and send a order with user's data to the backend (Firebase)",
       picture: projectsPictures.burger,
-      techs: ["HTML", "CSS", "React", "AXIOS", "Firebase"],
+      techs: ["HTML-CSS", "React", "Rest", "Firebase"],
       link: "https://jdevburgerbuilder.netlify.app/",
       repository: "https://github.com/ing-arriola/BurgerBuilderApp",
     },
@@ -41,7 +41,7 @@ const Projects = () => {
       id: 4,
       name: "ONG Website",
       description:
-        "React Front End App with an Strapi API which was made for free in order to help to the ONG 'Jovenes para el futuro ' ",
+        "React Front End App with an Contentful backend which was made for free in order to help to the NGO Red de jovenes para el futuro ",
       picture: projectsPictures.redJovenes,
       techs: ["React", "Gatsby", "Contenful", "GraphQL"],
       link: "https://rdjfuturo.netlify.app/",
@@ -50,7 +50,7 @@ const Projects = () => {
     {
       id: 5,
       name: "Natours",
-      description: " Project Description ",
+      description: " Landing page for a travel agency ",
       picture: projectsPictures.natours,
       techs: ["HTML", "CSS", "SASS"],
       link: "https://ing-arriola.github.io/ToursWebPage/",
@@ -59,7 +59,7 @@ const Projects = () => {
     {
       id: 6,
       name: "Social Page",
-      description: " Project Description ",
+      description: " Lanfing page for a social page ",
       picture: projectsPictures.landing,
       techs: ["React", "React-Bootstrap"],
       link: "https://landing-social.netlify.app/",
@@ -68,7 +68,7 @@ const Projects = () => {
     {
       id: 7,
       name: "Restaurant JS",
-      description: " Project Description ",
+      description: " Website for a restaturant ",
       picture: projectsPictures.restaurant,
       techs: ["React", "React-Bootstrap"],
       link: "https://reactjs-restaurant.netlify.app/",
@@ -77,11 +77,29 @@ const Projects = () => {
     {
       id: 8,
       name: "Bitcoin Ticker",
-      description: " Project Description ",
+      description: " Mobile application to get value of cryptocurrencies ",
       picture: projectsPictures.CoinTicker,
       techs: ["Flutter","Dart"],
       link: "https://www.youtube.com/watch?v=qIGBm68wR20",
       repository: "https://github.com/ing-arriola/BitcoinFlutter",
+    },
+    {
+      id: 9,
+      name: "Vending machine",
+      description: "Send me a message to share with you a test user",
+      picture: projectsPictures.Vending,
+      techs: ["React","Auth0","Firebase","Rest API"],
+      link: "https://jarriola-vending-machine.netlify.app",
+      repository: "https://github.com/ing-arriola/vending-marchine",
+    },
+    {
+      id: 10,
+      name: "Guess the number",
+      description: " Project Description ",
+      picture: projectsPictures.GuessNumber,
+      techs: ["React Native"],
+      link: "https://www.youtube.com/watch?v=92NVVz6_ikg&t=1s",
+      repository: "https://github.com/ing-arriola/rn-guess-number",
     },
   ];
 
@@ -91,6 +109,7 @@ const Projects = () => {
     { value: 'All', label: 'All' },
     { value: 'SASS', label: 'Static' },
     { value: 'React', label: 'React' },
+    { value: 'React Native', label: 'React Native' },
     { value: 'Flutter', label: 'Flutter' },
   ];
 
@@ -140,18 +159,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-/*
-{(projectsData.filter(project => project.techs.includes(selectedOption) )).map((item) => (
-          <Project
-          key={item.id}
-          projectName={item.name}
-          projectDescription={item.description}
-          projectTechs={item.techs}
-          projectPicture={item.picture}
-          projectLink={item.link}
-          projectRepository={item.repository}
-        />
-        ))}
-
-*/
