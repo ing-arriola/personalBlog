@@ -16,7 +16,6 @@ const Toolbar = (props) => {
   };
 
   window.addEventListener("scroll", changeNavbarBackground);
-  console.log(props.show);
 
   return (
     <header className={navBackground === true ? "toolbar active " : "toolbar"}>

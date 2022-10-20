@@ -1,6 +1,5 @@
 import React from "react";
 import NavigationItem from "./NavigationItem";
-import Pdf from "../../docs/Jaime Arriola.pdf";
 import { FaEnvelope, FaLaptopCode, FaUserAlt, FaHome } from "react-icons/fa";
 
 const NavigationItems = (props) => {
@@ -31,7 +30,7 @@ const NavigationItems = (props) => {
         Contact
       </NavigationItem>
       <a
-        href={Pdf}
+        href='https://docs.google.com/document/d/1AX8YQipVsqjfx-GTTIwwNrRKzRqvzcJ4JU6pbuEWpJA/edit?usp=sharing'
         rel="noreferrer noopener"
         target="_blank"
         className={
