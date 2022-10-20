@@ -3,7 +3,7 @@ import jarriolaPhoto from "../../images/jaimeArriola.png";
 import * as logos from "../../images/about/index";
 import ae from "../../docs/aeroman.pdf";
 import dg from "../../docs/dataguard.pdf";
-import crn from "../../docs/ceren.pdf";
+import ravn from "../../docs/Ravn.pdf";
 
 import {
   FaRegLightbulb,
@@ -15,24 +15,23 @@ import {
 import { motion } from "framer-motion";
 
 const About = () => {
-  const letters = [ae, dg, crn];
+  const letters = [ae, dg, ravn];
 
   const employers = [
-    {
-      name: "Aeroman",
-      opinion:
-        "Jaime Arriola  customized Aeroman LMS using HTML, CSS and adding customized functions with JavaScript, His experience & personal qualities will make him a powerful asset",
-    },
     {
       name: "DataGuard",
       opinion:
         "Jaime worked for one of our most important customers showing responsibility, dedication and high commitment ",
     },
     {
-      name: "Colegio Ceren ",
+      name: "Aeroman",
       opinion:
-        "When Jaime  worked in our company on the development of  VBA Applications & teaching programming and electronics, also He showed  responsibility, Honesty and Respect. ",
+        "Jaime Arriola  customized Aeroman LMS using HTML, CSS and adding customized functions with JavaScript, His experience & personal qualities will make him a powerful asset",
     },
+    {
+      name:'RAVN',
+      opinion:'Having know Jaime as his manager and boss I am certain that he will thrive as a software developer in the future due to his persistence and willingness to learn new technologies, design patterns and methodologies'
+    }
   ];
   //{Pdf}
   return (
@@ -78,18 +77,21 @@ const About = () => {
           <h2>My Tech stack</h2>
         </div>
         <div id="skills--section__logos">
-          <img className="logos__logo" src={logos.jsLogo} alt="JavaScript" />
+          <img className="logos__logo" src={logos.typescript} alt="Typescript" />
           <img className="logos__logo" src={logos.reactLogo} alt="React" />
-          <img className="logos__logo" src={logos.flutterLogo} alt="Flutter" />
-          <img className="logos__logo" src={logos.graphqlLogo} alt="GraphQL" />
-          <img className="logos__logo" src={logos.storybookLogo} alt="Storybook" />
-          <img className="logos__logo" src={logos.nodeLogo} alt="NodeJS" />
+          <img className="logos__logo" src={logos.reactNativeLogo} alt="ReactNative" />
+          <img className="logos__logo" src={logos.jsLogo} alt="JavaScript" />
           <img className="logos__logo" src={logos.html} alt="HTML" />
           <img className="logos__logo" src={logos.cssLogo} alt="CSS" />
+          <img className="logos__logo" src={logos.styledLogo} alt="STYLED" />
           <img className="logos__logo" src={logos.sassLogo} alt="SASS" />
+          <img className="logos__logo" src={logos.apolloLogo} alt="APOLLO" />
+          <img className="logos__logo" src={logos.graphqlLogo} alt="GraphQL" />
+          <img className="logos__logo" src={logos.cypressLogo} alt="CYPRESS" />
+          <img className="logos__logo" src={logos.storybookLogo} alt="Storybook" />
           <img className="logos__logo" src={logos.gatsbyLogo} alt="GATSBY" />
-          <img className="logos__logo" src={logos.mongoLogo} alt="MONGODB" />
-          <img className="logos__logo" src={logos.moodleLogo} alt="MOODLE" />
+          <img className="logos__logo" src={logos.nodeLogo} alt="NodeJS" />
+          <img className="logos__logo" src={logos.jestLogo} alt="JEST" />
         </div>
       </section>
 
