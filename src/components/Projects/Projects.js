@@ -19,26 +19,6 @@ const Projects = () => {
     },
     {
       id: 2,
-      name: "Bug Tracker",
-      description:
-        "This is a fullstack App made with MERN STACK and this allow to different users follow a flow of work ",
-      picture: projectsPictures.tracker,
-      techs: ["Mongo", "Express", "React", "Node"],
-      link: "https://desolate-fortress-08367.herokuapp.com/login",
-      repository: "https://github.com/ing-arriola/bugTrackerApp",
-    },
-    {
-      id: 3,
-      name: "Burger Builder",
-      description:
-        "This is a Front-end React App to build a hamburger, make an order and send a order with user's data to the backend (Firebase)",
-      picture: projectsPictures.burger,
-      techs: ["HTML-CSS", "React", "Rest", "Firebase"],
-      link: "https://jdevburgerbuilder.netlify.app/",
-      repository: "https://github.com/ing-arriola/BurgerBuilderApp",
-    },
-    {
-      id: 4,
       name: "ONG Website",
       description:
         "React Front End App with an Contentful backend which was made for free in order to help to the NGO Red de jovenes para el futuro ",
@@ -48,7 +28,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/gatsbyOng",
     },
     {
-      id: 5,
+      id: 3,
       name: "Natours",
       description: " Landing page for a travel agency ",
       picture: projectsPictures.natours,
@@ -57,7 +37,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/ToursWebPage",
     },
     {
-      id: 6,
+      id: 4,
       name: "Social Page",
       description: " Lanfing page for a social page ",
       picture: projectsPictures.landing,
@@ -66,7 +46,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/looplab",
     },
     {
-      id: 7,
+      id: 5,
       name: "Restaurant JS",
       description: " Website for a restaturant ",
       picture: projectsPictures.restaurant,
@@ -75,7 +55,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/company-site",
     },
     {
-      id: 8,
+      id: 6,
       name: "Bitcoin Ticker",
       description: " Mobile application to get value of cryptocurrencies ",
       picture: projectsPictures.CoinTicker,
@@ -84,7 +64,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/BitcoinFlutter",
     },
     {
-      id: 9,
+      id: 7,
       name: "Vending machine",
       description: "Send me a message to share with you a test user",
       picture: projectsPictures.Vending,
@@ -93,7 +73,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/vending-marchine",
     },
     {
-      id: 10,
+      id: 8,
       name: "Guess the number",
       description: " Project Description ",
       picture: projectsPictures.GuessNumber,
