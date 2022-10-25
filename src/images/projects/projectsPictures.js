@@ -1,5 +1,5 @@
 export const gitFinder = require("./githubFinder.png")
-export const burger = require("./burgerBuilder.png")
+export const rickMorty = require("./rickMorty.png")
 export const redJovenes = require("./redJovenes.png")
 export const tracker = require("./tracker.png")
 export const natours = require("./natours.png")

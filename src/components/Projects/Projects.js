@@ -9,6 +9,16 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
+      name: "Rick&Morty App",
+      description:
+        "This is a Front-end App which uses the Rick&Morty API to show and manage your favorites characters of the show",
+      picture: projectsPictures.rickMorty,
+      techs: ["NextJS", "React", "Typescript","NextUI"],
+      link: "https://jarriola-rickmorty.vercel.app",
+      repository: "https://github.com/ing-arriola/rick-MortyApp",
+    },
+    {
+      id: 2,
       name: "Github Finder",
       description:
         "This is a Front-end App which uses the Github API in order to get public data from github profiles",
@@ -18,7 +28,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/githubFinder",
     },
     {
-      id: 2,
+      id: 3,
       name: "ONG Website",
       description:
         "React Front End App with an Contentful backend which was made for free in order to help to the NGO Red de jovenes para el futuro ",
@@ -28,7 +38,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/gatsbyOng",
     },
     {
-      id: 3,
+      id: 4,
       name: "Natours",
       description: " Landing page for a travel agency ",
       picture: projectsPictures.natours,
@@ -37,7 +47,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/ToursWebPage",
     },
     {
-      id: 4,
+      id: 5,
       name: "Social Page",
       description: " Lanfing page for a social page ",
       picture: projectsPictures.landing,
@@ -46,7 +56,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/looplab",
     },
     {
-      id: 5,
+      id: 6,
       name: "Restaurant JS",
       description: " Website for a restaturant ",
       picture: projectsPictures.restaurant,
@@ -55,7 +65,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/company-site",
     },
     {
-      id: 6,
+      id: 7,
       name: "Bitcoin Ticker",
       description: " Mobile application to get value of cryptocurrencies ",
       picture: projectsPictures.CoinTicker,
@@ -64,7 +74,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/BitcoinFlutter",
     },
     {
-      id: 7,
+      id: 8,
       name: "Vending machine",
       description: "Send me a message to share with you a test user",
       picture: projectsPictures.Vending,
@@ -73,7 +83,7 @@ const Projects = () => {
       repository: "https://github.com/ing-arriola/vending-marchine",
     },
     {
-      id: 8,
+      id: 9,
       name: "Guess the number",
       description: " Project Description ",
       picture: projectsPictures.GuessNumber,
