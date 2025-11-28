@@ -1,138 +1,158 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Sparkles, Zap } from "lucide-react";
+import { Play, Mail, Code2, Brain } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-primary/30 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.3, 0.8, 0.3],
-              }}
-              transition={{
-                duration: 2 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
+    <div className="min-h-screen pt-20">
+      <div className="container mx-auto px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+          {/* Left Column - Main Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
           >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-6"
-            >
-              <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium">
-                Fullstack Developer
-              </span>
-            </motion.div>
+            {/* Availability Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full">
+              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              <span className="text-sm text-foreground">Open to full-time & contract roles · Remote-friendly</span>
+            </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6">
-              <span className="text-gradient glow-text">JAIME ARRIOLA</span>
+            {/* Headline */}
+            <h1 className="text-4xl md:text-4xl lg:text-5xl font-semibold leading-tight text-foreground">
+              Jaime Arriola a product-minded engineer who builds production-ready products with{" "}
+              <span className="text-cyan-400">TypeScript</span>,{" "}
+              <span className="text-cyan-400">React</span>,{" "}
+              <span className="text-cyan-400">Python</span>{" "}
+              <span className="text-cyan-400">& AI</span>
             </h1>
-
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Turning your ideas into powerful web applications with{" "}
-              <span className="text-primary font-semibold">Python</span>,{" "}
-              <span className="text-primary font-semibold">React</span>, and{" "}
-              <span className="text-primary font-semibold">AI-powered tools</span>
+            
+            {/* Description */}
+            <p className="text-lg text-foreground/90 leading-relaxed">
+              I help engineering teams ship faster by owning the full stack: from polished React interfaces to resilient Python backends, all the way to intelligent features powered by modern AI tooling.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link to="/work">
-                <Button size="lg" className="gap-2 group">
-                  View My Work
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Button className="bg-green-500 hover:bg-green-600 text-white gap-2">
+                  <Play className="w-4 h-4" />
+                  View selected work
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="gap-2">
-                  Get In Touch
+                <Button variant="outline" className="gap-2 border-border bg-secondary/50 hover:bg-secondary">
+                  <Mail className="w-4 h-4" />
+                  Book a 15-min intro
                 </Button>
               </Link>
             </div>
 
-            {/* Tech Highlights */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
-            >
-              <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-smooth">
-                <Code2 className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-lg font-display font-semibold mb-2">Fullstack Expertise</h3>
-                <p className="text-muted-foreground text-sm">
-                  React, React Native, Python, Django, NextJS, and modern web technologies
-                </p>
+            {/* CORE STACK Section */}
+            <div className="pt-8">
+              <h3 className="text-sm text-foreground/60 mb-4 uppercase tracking-wider">CORE STACK</h3>
+              <div className="flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+                  <Code2 className="w-4 h-4 text-foreground/70" />
+                  <span className="text-sm text-foreground">TypeScript · React · Next.js</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+                  <span className="text-sm text-foreground">🐍</span>
+                  <span className="text-sm text-foreground">Python · FastAPI · Node</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+                  <Brain className="w-4 h-4 text-foreground/70" />
+                  <span className="text-sm text-foreground">AI · LLMs · MLOps</span>
+                </div>
               </div>
-
-              <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-smooth">
-                <Sparkles className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-lg font-display font-semibold mb-2">AI-Powered Development</h3>
-                <p className="text-muted-foreground text-sm">
-                  Leveraging AI tools to supercharge development and deliver faster results
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-smooth">
-                <Zap className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-lg font-display font-semibold mb-2">Years of Experience</h3>
-                <p className="text-muted-foreground text-sm">
-                  Proven track record building scalable applications for startups and enterprises
-                </p>
-              </div>
-            </motion.div>
+            </div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/5 to-transparent">
-        <div className="container mx-auto px-4">
+          {/* Right Column - Code Snippet & Quote */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-              Ready to build something amazing?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Let's discuss how I can help bring your vision to life with modern web technologies
-            </p>
-            <Link to="/contact">
-              <Button size="lg" className="gap-2 group">
-                Start a Project
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+            <div className="bg-card border border-border rounded-lg overflow-hidden">
+              {/* Code Editor Window Bar */}
+              <div className="flex items-center justify-between px-4 py-3 bg-secondary/50 border-b border-border">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                </div>
+                <span className="text-xs text-foreground/60">recruiter-brief.tsx</span>
+              </div>
+
+              {/* Code Snippet */}
+              <div className="p-6 font-mono text-sm">
+                <div className="space-y-1">
+                  <div>
+                    <span className="text-purple-400">const</span>{" "}
+                    <span className="text-cyan-400">fit</span>
+                    <span className="text-foreground">: </span>
+                    <span className="text-yellow-400">CandidateProfile</span>
+                    <span className="text-foreground"> {"=>"} (</span>
+                    <span className="text-foreground">{"{"}</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-cyan-400">strengths</span>
+                    <span className="text-foreground">: [</span>
+                    <span className="text-green-400">'product-minded'</span>
+                    <span className="text-foreground">, </span>
+                    <span className="text-green-400">'fast</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">  iterations'</span>
+                    <span className="text-foreground">, </span>
+                    <span className="text-green-400">'clear comms'</span>
+                    <span className="text-foreground">] ,</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-cyan-400">impact</span>
+                    <span className="text-foreground">: [</span>
+                    <span className="text-green-400">'greenfield builds'</span>
+                    <span className="text-foreground">, </span>
+                    <span className="text-green-400">'legacy</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">  refactors'</span>
+                    <span className="text-foreground">, </span>
+                    <span className="text-green-400">'AI features'</span>
+                    <span className="text-foreground">]</span>
+                  </div>
+                  <div>
+                    <span className="text-foreground">{"})"}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quote */}
+              <div className="px-6 pb-6 border-t border-border pt-6">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">💬</div>
+                  <p className="text-sm text-foreground/80 italic leading-relaxed">
+                    "I love working with teams who care about developer experience, clean abstractions and measurable impact."
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Tag */}
+              <div className="px-6 pb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
+                  <span className="text-xs font-semibold text-primary">TReacPy AI</span>
+                  <span className="text-xs text-foreground/60">Shipping user-facing value since 2016</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
