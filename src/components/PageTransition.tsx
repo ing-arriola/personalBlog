@@ -32,16 +32,16 @@ const PageTransition = ({ children }: PageTransitionProps) => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="mb-4"
+                className="mb-8"
               >
-                <h2 className="text-4xl md:text-6xl font-display text-gradient glow-text">
+                <h2 className="text-5xl md:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-cyan-300">
                   JAIME ARRIOLA
                 </h2>
               </motion.div>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-16 h-16 mx-auto border-4 border-primary border-t-transparent rounded-full"
+                className="w-16 h-16 mx-auto border-2 border-cyan-400 border-t-transparent rounded-full"
               />
             </div>
           </motion.div>
@@ -49,15 +49,20 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       </AnimatePresence>
 
       <AnimatePresence mode="wait">
-        <motion.div
-          key={location.pathname}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4 }}
-        >
-          {children}
-        </motion.div>
+        {!isLoading && (
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ 
+              duration: 0.3,
+              ease: [0.4, 0, 0.2, 1]
+            }}
+          >
+            {children}
+          </motion.div>
+        )}
       </AnimatePresence>
     </>
   );
