@@ -1,163 +1,159 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
 const Work = () => {
-  const [filter, setFilter] = useState("All");
-
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-      tech: ["React", "Python", "Django", "Stripe"],
-      category: "Fullstack",
-      demo: "#",
-      code: "#",
+      title: "AI Code Assistant",
+      tech: "TS • React • Python • LLMs",
+      description: "Embedded AI helper that ships pull-request-ready suggestions. Designed and built an in-IDE assistant that integrates with internal APIs, understands project context and auto-drafts PR descriptions, cutting review time by 30%.",
+      tags: ["Observability", "LLM evaluation", "Developer tools"],
     },
     {
-      title: "Mobile Fitness App",
-      description: "Cross-platform fitness tracking app with workout plans, progress tracking, and social features",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop",
-      tech: ["React Native", "TypeScript", "Firebase"],
-      category: "Mobile",
-      demo: "#",
-      code: "#",
+      title: "Hiring Analytics Dashboard",
+      tech: "React • Node • Postgres",
+      description: "Real-time view of funnel health for recruiting teams. Built a responsive dashboard with custom charts and granular permissions. Reduced weekly reporting time from hours to minutes and surfaced bottlenecks in the pipeline.",
+      tags: ["Data modeling", "RBAC", "Design systems"],
     },
     {
-      title: "AI Content Generator",
-      description: "AI-powered content generation tool using modern LLMs with custom prompts and templates",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-      tech: ["NextJS", "Python", "OpenAI", "Tailwind"],
-      category: "AI",
-      demo: "#",
-      code: "#",
-    },
-    {
-      title: "Real Estate Dashboard",
-      description: "Property management system with analytics, tenant management, and financial reporting",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-      tech: ["React", "Node.js", "PostgreSQL", "Charts"],
-      category: "Fullstack",
-      demo: "#",
-      code: "#",
-    },
-    {
-      title: "Social Media App",
-      description: "Social networking platform with real-time chat, posts, stories, and user interactions",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-      tech: ["React Native", "Django", "WebSockets"],
-      category: "Mobile",
-      demo: "#",
-      code: "#",
-    },
-    {
-      title: "Project Management Tool",
-      description: "Collaborative project management with Kanban boards, time tracking, and team features",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-      tech: ["React", "Python", "GraphQL", "Redux"],
-      category: "Fullstack",
-      demo: "#",
-      code: "#",
+      title: "Experimentation Platform",
+      tech: "Python • Feature Flags • CI/CD",
+      description: "Safely testing ideas in production without slowing teams down. Implemented a feature-flag and A/B testing layer, integrated with CI pipelines and analytics. Enabled fast rollouts, rollbacks and data-driven decisions.",
+      tags: ["CI/CD", "Metrics", "Reliability"],
     },
   ];
 
-  const categories = ["All", "Fullstack", "Mobile", "AI"];
-
-  const filteredProjects = filter === "All" 
-    ? projects 
-    : projects.filter(p => p.category === filter);
-
   return (
-    <div className="min-h-screen pt-24 pb-12">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-20 pb-16">
+      <div className="container mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="mb-12"
         >
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-            <span className="text-gradient">My Work</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Check out some of my best projects built with modern technologies
-          </p>
-
-          {/* Filter */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={filter === category ? "default" : "outline"}
-                onClick={() => setFilter(category)}
-                className="transition-smooth"
-              >
-                {category}
-              </Button>
-            ))}
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-2">
+                Selected work
+              </h1>
+              <p className="text-base text-foreground/70">
+                A few projects that showcase end-to-end ownership and impact.
+              </p>
+            </div>
+            <Link
+              to="/about"
+              className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-1"
+            >
+              Full experience overview
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+        <div className="space-y-6 max-w-4xl mb-16">
+          {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-smooth group"
+              className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors"
             >
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <div className="flex gap-2">
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="secondary" className="gap-2">
-                        <ExternalLink className="w-4 h-4" />
-                        Demo
-                      </Button>
-                    </a>
-                    <a href={project.code} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="outline" className="gap-2">
-                        <Github className="w-4 h-4" />
-                        Code
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xl font-display font-bold">{project.title}</h3>
-                  <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                    {project.category}
-                  </span>
-                </div>
-                <p className="text-muted-foreground text-sm mb-4">
+              <div className="mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-1">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-foreground/60 mb-3">
+                  {project.tech}
+                </p>
+                <p className="text-sm text-foreground/80 leading-relaxed mb-4">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-secondary text-xs rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 bg-secondary text-xs text-foreground/70 rounded"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Experience Snapshot Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto"
+        >
+          {/* Left Column - Experience Details */}
+          <div>
+            <h2 className="text-2xl font-semibold text-foreground mb-6">
+              Experience snapshot
+            </h2>
+            <div className="space-y-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    Senior Full-Stack Engineer
+                  </h3>
+                  <p className="text-sm text-foreground/60 mt-1">
+                    Product companies & early-stage startups
+                  </p>
+                </div>
+                <span className="text-sm text-foreground/60">8+ years</span>
+              </div>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Led builds from idea to production for cross-functional teams.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Mentored engineers on modern frontend and backend patterns.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Introduced AI features with measurable impact on key metrics.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Right Column - Resume Download */}
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">
+              Need the full picture?
+            </h3>
+            <p className="text-sm text-foreground/60 mb-1">
+              Ideal for sharing with hiring managers
+            </p>
+            <p className="text-sm text-foreground/70 mb-6">
+              Get a concise, two-page overview with roles, tech stack, quantified impact and links to production work.
+            </p>
+            <div className="flex items-center gap-3">
+              <Button className="bg-primary hover:bg-primary/90 text-background gap-2">
+                <Download className="w-4 h-4" />
+                Download resume
+              </Button>
+              <Link
+                to="/contact"
+                className="text-sm text-foreground/70 hover:text-primary transition-colors"
+              >
+                or request a tailored version
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
