@@ -101,10 +101,12 @@ const CodeHighlight = () => {
   }
 
   return (
-    <div
-      className="p-6 font-mono text-sm [&_pre]:bg-transparent [&_pre]:p-0 [&_pre]:m-0 [&_pre]:overflow-visible [&_pre]:text-foreground [&_code]:text-foreground [&_span]:leading-relaxed"
-      dangerouslySetInnerHTML={{ __html: highlightedCode }}
-    />
+    <div className="overflow-x-auto">
+      <div
+        className="p-4 sm:p-6 font-mono text-xs sm:text-sm [&_pre]:bg-transparent [&_pre]:p-0 [&_pre]:m-0 [&_pre]:overflow-visible [&_pre]:text-foreground [&_code]:text-foreground [&_span]:leading-relaxed [&_pre]:whitespace-pre"
+        dangerouslySetInnerHTML={{ __html: highlightedCode }}
+      />
+    </div>
   );
 };
 
