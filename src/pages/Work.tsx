@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download, ExternalLink, Github } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/projects";
 
 const Work = () => {
@@ -22,13 +21,6 @@ const Work = () => {
                 A few projects that showcase end-to-end ownership and impact.
               </p>
             </div>
-            <Link
-              to="/about"
-              className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-1"
-            >
-              Full experience overview
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </motion.div>
 

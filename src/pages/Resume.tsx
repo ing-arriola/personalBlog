@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, ExternalLink } from "lucide-react";
+import { Download, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Resume = () => {
@@ -25,6 +25,12 @@ const Resume = () => {
             }}>
               <Download className="w-5 h-5" />
               Download Resume
+            </Button>
+            <Button size="lg" className="gap-2" onClick={() => {
+              window.open("https://www.linkedin.com/in/jarriola-dev/", "_blank");
+            }}>
+              <Linkedin className="w-5 h-5" />
+              LinkedIn Profile
             </Button>
           </div>
         </motion.div>
