@@ -24,16 +24,6 @@ const Resume = () => {
               <Download className="w-5 h-5" />
               Download Resume (PDF)
             </Button>
-            <a
-              href="https://jaime-arriola.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" variant="outline" className="gap-2">
-                <ExternalLink className="w-5 h-5" />
-                View Online Portfolio
-              </Button>
-            </a>
           </div>
         </motion.div>
 
