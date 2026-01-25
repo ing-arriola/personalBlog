@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# Jaime Arriola - Portfolio
 
-## Project info
+**Full-Stack Engineer | TypeScript, React, React Native, Python & AI**
 
-**URL**: https://lovable.dev/projects/27c2a90f-f4f4-405c-b116-91207755ec3a
+A product-minded engineer with 6+ years of experience building production-ready products. Open to full-time & contract roles · Remote-friendly.
 
-## How can I edit this code?
+## About
 
-There are several ways of editing your application.
+I help engineering teams ship faster by owning the full stack: from polished React interfaces to resilient Python backends, all the way to intelligent features powered by modern AI tooling.
 
-**Use Lovable**
+With 6+ years of experience and 5+ years working with US tech teams, I specialize in building scalable, maintainable applications that deliver measurable impact.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/27c2a90f-f4f4-405c-b116-91207755ec3a) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
+- **React** - UI library for building interactive interfaces
+- **TypeScript** - Type-safe JavaScript
+- **React Native** - Cross-platform mobile development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library for React
+- **shadcn/ui** - High-quality component library
+- **React Router** - Client-side routing
 
-**Use your preferred IDE**
+### Backend & Tools
+- **Python** - Backend development with Django
+- **Node.js** - Server-side JavaScript runtime
+- **Vite** - Next-generation frontend build tool
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### AI & Modern Tooling
+- **AI/LLMs** - Integration with modern AI tooling
+- **CLI Tools** - Development automation
+- **Shiki** - Syntax highlighting for code snippets
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Deployment
+- **Netlify** - Hosting and form handling
 
-Follow these steps:
+## Local Development
+
+### Prerequisites
+
+- Node.js >= 18 ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+- npm or yarn
+
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/ing-arriola/personalBlog.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd ai-powered-coder
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173` (or the port shown in your terminal).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # Reusable React components
+├── pages/         # Page components (Home, About, Work, Contact)
+├── data/          # Data files (projects, etc.)
+├── assets/        # Static assets (images, etc.)
+└── App.tsx        # Main application component
+```
 
-This project is built with:
+## Features
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Responsive Design** - Mobile-first approach with optimized layouts
+- **Modern UI/UX** - Glassmorphism effects, smooth animations, and micro-interactions
+- **Contact Form** - Integrated Netlify Forms for email submissions
+- **Project Showcase** - Dynamic project display with images and links
+- **Code Highlighting** - Syntax-highlighted code snippets using Shiki
+- **Smooth Animations** - Scroll-based animations using Framer Motion
 
-## How can I deploy this project?
+## Contact
 
-Simply open [Lovable](https://lovable.dev/projects/27c2a90f-f4f4-405c-b116-91207755ec3a) and click on Share -> Publish.
+- **Email:** [arriola.dev@outlook.com](mailto:arriola.dev@outlook.com)
+- **GitHub:** [@jaime-arriola](https://github.com/jaime-arriola)
+- **LinkedIn:** [jaime-arriola](https://www.linkedin.com/in/jarriola-dev/)
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© 2026 Jaime Arriola. All rights reserved.
