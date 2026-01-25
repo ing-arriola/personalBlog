@@ -20,9 +20,11 @@ const Resume = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="gap-2">
+            <Button size="lg" className="gap-2" onClick={() => {
+              window.open("https://docs.google.com/document/d/1AX8YQipVsqjfx-GTTIwwNrRKzRqvzcJ4JU6pbuEWpJA/edit?usp=sharing", "_blank");
+            }}>
               <Download className="w-5 h-5" />
-              Download Resume (PDF)
+              Download Resume
             </Button>
           </div>
         </motion.div>
