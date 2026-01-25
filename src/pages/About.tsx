@@ -89,7 +89,7 @@ const About = () => {
         >
           <div className="bg-card border border-border rounded-lg p-6 text-center">
             <Briefcase className="w-10 h-10 text-primary mx-auto mb-3" />
-            <h3 className="text-2xl font-bold text-primary">5+ Years</h3>
+            <h3 className="text-2xl font-bold text-primary">6+ Years</h3>
             <p className="text-muted-foreground">Professional Experience</p>
           </div>
           <div className="bg-card border border-border rounded-lg p-6 text-center">
