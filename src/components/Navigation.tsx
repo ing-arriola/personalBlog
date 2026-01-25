@@ -16,6 +16,7 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-b border-border/50"
+      style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}
     >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -29,7 +30,7 @@ const Navigation = () => {
               <ChevronRight className="w-3 h-3 text-background" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+              <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                 Jaime Arriola
               </span>
               <span className="text-xs text-muted-foreground">
@@ -51,7 +52,7 @@ const Navigation = () => {
               </NavLink>
             ))}
             <NavLink to="/resume">
-              <Button variant="outline" size="sm" className="gap-2">
+              <Button variant="default" size="sm" className="gap-2 bg-primary hover:bg-primary/90">
                 <Download className="w-4 h-4" />
                 Resume
               </Button>
@@ -61,7 +62,7 @@ const Navigation = () => {
           {/* Mobile menu */}
           <div className="md:hidden flex items-center gap-2">
             <NavLink to="/resume">
-              <Button variant="outline" size="sm" className="gap-2">
+              <Button variant="default" size="sm" className="gap-2 bg-primary hover:bg-primary/90">
                 <Download className="w-4 h-4" />
               </Button>
             </NavLink>

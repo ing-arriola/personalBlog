@@ -1,29 +1,67 @@
-import { motion } from "framer-motion";
-import { Clock, Shield, Send } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Clock, Shield, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
-import { toast } from "sonner";
+import { useState, useEffect } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "Alex from ACME",
-    email: "alex@company.com",
-    role: "Senior Full-Stack / AI Engineer for core product team",
-    message: "Share team context, expectations, and timelines.",
+    name: "",
+    email: "",
+    role: "",
+    message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (isSuccess) {
+      const timer = setTimeout(() => {
+        setIsSuccess(false);
+        setFormData({
+          name: "",
+          email: "",
+          role: "",
+          message: "",
+        });
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSuccess]);
+
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
-    setFormData({ 
-      name: "", 
-      email: "", 
-      role: "", 
-      message: "" 
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formData,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was an error sending your message. Please try again or email me directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -70,8 +108,52 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
+            className="relative"
           >
-            <form onSubmit={handleSubmit} className="bg-card border border-border rounded-lg p-6 space-y-5">
+            <AnimatePresence>
+              {isSuccess && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 bg-card border border-green-500/50 rounded-lg p-6 flex flex-col items-center justify-center z-10 backdrop-blur-sm"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+                  >
+                    <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
+                  </motion.div>
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-lg font-semibold text-foreground mb-2"
+                  >
+                    Message sent!
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-sm text-foreground/70 text-center"
+                  >
+                    I'll respond within 24 hours.
+                  </motion.p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <form
+              name="contact"
+              data-netlify="true"
+              onSubmit={handleSubmit}
+              className="bg-card border border-border rounded-lg p-6 space-y-5"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              
               <div>
                 <Label htmlFor="name" className="text-sm text-foreground/70 mb-2 block">
                   Your name
@@ -81,7 +163,9 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="bg-background border-border text-foreground"
+                  disabled={isSubmitting || isSuccess}
+                  required
+                  className="bg-background border-border text-foreground disabled:opacity-50"
                 />
               </div>
 
@@ -95,7 +179,9 @@ const Contact = () => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="bg-background border-border text-foreground"
+                  disabled={isSubmitting || isSuccess}
+                  required
+                  className="bg-background border-border text-foreground disabled:opacity-50"
                 />
               </div>
 
@@ -108,7 +194,9 @@ const Contact = () => {
                   name="role"
                   value={formData.role}
                   onChange={handleChange}
-                  className="bg-background border-border text-foreground"
+                  disabled={isSubmitting || isSuccess}
+                  required
+                  className="bg-background border-border text-foreground disabled:opacity-50"
                 />
               </div>
 
@@ -121,26 +209,42 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  disabled={isSubmitting || isSuccess}
+                  required
                   rows={4}
-                  className="bg-background border-border text-foreground resize-none"
+                  className="bg-background border-border text-foreground resize-none disabled:opacity-50"
                 />
               </div>
 
               <div className="flex items-center gap-4">
-                <Button 
-                  type="submit" 
-                  className="bg-primary hover:bg-primary/90 text-background gap-2"
+                <Button
+                  type="submit"
+                  disabled={isSubmitting || isSuccess}
+                  className="bg-primary hover:bg-primary/90 text-background gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4" />
-                  Send message
+                  {isSubmitting ? (
+                    <>
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        className="w-4 h-4 border-2 border-background border-t-transparent rounded-full"
+                      />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Send message
+                    </>
+                  )}
                 </Button>
                 <p className="text-xs text-foreground/50">
                   Or reach out directly:{" "}
-                  <a 
-                    href="mailto:jaime.arriola@proton.me" 
+                  <a
+                    href="mailto:arriola.dev@outlook.com"
                     className="text-foreground/70 hover:text-primary transition-colors"
                   >
-                    jaime.arriola@proton.me
+                    arriola.dev@outlook.com
                   </a>
                 </p>
               </div>

@@ -6,8 +6,8 @@ const About = () => {
     {
       title: "FullStack Developer",
       company: "Rumbix",
-      period: "October 2024 - Present",
-      location: "Remote",
+      period: "October 2025 - Present",
+      location: "Remote - US Company",
       description: [
         "Built and maintained scalable RESTful APIs with Python and Django",
         "Developed UI components and integrated web applications with backend using Axios and Redux",
@@ -18,7 +18,7 @@ const About = () => {
     {
       title: "Frontend Developer (React/React Native)",
       company: "DESIGNLI",
-      period: "January 2024 - July 2024",
+      period: "January 2024 - July 2025",
       location: "Remote - US Company",
       description: [
         "Conducted client demos showcasing new features and gathering feedback",
@@ -89,12 +89,12 @@ const About = () => {
         >
           <div className="bg-card border border-border rounded-lg p-6 text-center">
             <Briefcase className="w-10 h-10 text-primary mx-auto mb-3" />
-            <h3 className="text-2xl font-bold text-primary">3+ Years</h3>
+            <h3 className="text-2xl font-bold text-primary">5+ Years</h3>
             <p className="text-muted-foreground">Professional Experience</p>
           </div>
           <div className="bg-card border border-border rounded-lg p-6 text-center">
             <Code className="w-10 h-10 text-primary mx-auto mb-3" />
-            <h3 className="text-2xl font-bold text-primary">50+</h3>
+            <h3 className="text-2xl font-bold text-primary">12+</h3>
             <p className="text-muted-foreground">Projects Completed</p>
           </div>
           <div className="bg-card border border-border rounded-lg p-6 text-center">
