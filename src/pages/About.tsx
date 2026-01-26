@@ -32,7 +32,7 @@ const About = () => {
       title: "Software Developer (React/NextJS)",
       company: "Believe Solutions",
       period: "November 2022 - August 2023",
-      location: "Remote",
+      location: "Remote - Bolivia Company",
       description: [
         "Fixed bugs and created new features using NextJS, React, and TypeScript",
         "Built and maintained RESTful APIs with Python, Django, and NodeJS",
@@ -45,13 +45,26 @@ const About = () => {
       title: "Frontend Instructor",
       company: "DEV.F",
       period: "April 2022 - December 2022",
-      location: "Part-time",
+      location: "Remote - Mexico Company",
       description: [
         "Taught modern frontend development with React and JavaScript",
         "Mentored students in building real-world applications",
         "Created educational content and code examples",
       ],
     },
+    {
+      title: "Frontend Developer",
+      company: "RAVN",
+      period: "June 2022 - October 2022",
+      location: "Remote - US Company",
+      description: [
+        "Develop UI components and screens using, ReactJS and Typescript",
+        "Override Ant Design styles with Styled Components to get custom components",
+        "Test components using Jest and React Testing Library",
+        "Test End to End flows in web applications using Cypress Framework ",
+        "Integrate web applications with backend using Apollo Client and GraphQL",
+      ],
+    }
   ];
 
   const skills = [
@@ -193,6 +206,12 @@ const About = () => {
           </div>
         </motion.div>
       </div>
+      <div className="container text-center px-4">
+      <h6 className="text-4xl md:text-3xl font-display font-bold mt-10">
+            <span className="text-gradient">To see full experience, <a href="/resume" className="text-primary hover:text-primary/80 underline"> click here to check my resume</a> </span>
+          </h6>
+      </div>
+      
     </div>
   );
 };
