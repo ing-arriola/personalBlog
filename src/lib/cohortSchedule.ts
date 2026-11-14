@@ -99,6 +99,28 @@ export function paymentUrlFor(phase: CohortPhase): string | null {
   return null;
 }
 
+export function plusOffer(phase: CohortPhase): { amount: number; compareAt: number | null; url: string | null } {
+  if (phase === "closed") {
+    return { amount: englishForDevs.plusPrice, compareAt: null, url: null };
+  }
+  const earlyPrice = englishForDevs.plusEarlyBirdPrice;
+  if (phase === "early-bird" && typeof earlyPrice === "number") {
+    return {
+      amount: earlyPrice,
+      compareAt: englishForDevs.plusPrice,
+      url: englishForDevs.plusEarlyBirdPaymentUrl || englishForDevs.plusPaymentUrl,
+    };
+  }
+  return { amount: englishForDevs.plusPrice, compareAt: null, url: englishForDevs.plusPaymentUrl };
+}
+
+export function upcomingWebinars(now: Date) {
+  return englishForDevs.webinars.filter((item) => {
+    const when = parseInstant(item.date);
+    return when !== null && when.getTime() >= now.getTime();
+  });
+}
+
 export function countdownTargetFor(phase: CohortPhase): string | null {
   if (phase === "early-bird") return englishForDevs.earlyBirdEndsAt;
   if (phase === "regular") return englishForDevs.enrollmentClosesAt;

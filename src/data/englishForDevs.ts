@@ -11,8 +11,17 @@
  * until you replace them.
  *
  * Set `seatsLeft` to 0 when the cohort is full. Set `installmentsNote` to
- * "" to hide it (example when you want it: "2 payments of $77").
+ * "" to hide it. Set `plusEarlyBirdPrice` to a number to discount Plus
+ * during the early-bird window; leave it null and Plus stays at plusPrice.
  * Set `recordingsAvailableFor` when you know how long recordings stay up.
+ * Leave `testimonials` empty until you have real quotes. Do not invent any.
+ *
+ * GoatCounter (free, no cookies): https://www.goatcounter.com
+ * 1. Create a site. The code is the subdomain before .goatcounter.com.
+ * 2. Set `goatcounterCode` here, or set VITE_GOATCOUNTER_CODE in Netlify.
+ *    The env value wins. Leave both empty and no script is added.
+ * 3. The script is https://gc.zgo.at/count.js. CTA clicks send events named
+ *    level-check, enroll, enroll-plus, webinar, lead-magnet, and waitlist.
  */
 
 const whatsappMessage = "Hi Jaime, I want a seat in English for Devs.";
@@ -34,12 +43,17 @@ export const englishForDevs = {
   currency: "USD",
   regularPrice: 147,
   earlyBirdPrice: 117,
-  installmentsNote: "",
+  installmentsNote: "2 payments available",
+  companyInvoiceNote: "Company paying? Invoices available",
 
   earlyBirdEndsAt: "2026-12-04T23:59:00-06:00",
   enrollmentClosesAt: "2026-12-18T18:00:00-06:00",
   earlyBirdPaymentUrl: "https://example.com/english-for-devs-early-bird-PLACEHOLDER",
   regularPaymentUrl: "https://example.com/english-for-devs-regular-PLACEHOLDER",
+  plusPrice: 247,
+  plusEarlyBirdPrice: null as number | null,
+  plusPaymentUrl: "https://example.com/english-for-devs-plus-PLACEHOLDER",
+  plusEarlyBirdPaymentUrl: "https://example.com/english-for-devs-plus-early-bird-PLACEHOLDER",
   waitlistUrl: "https://tally.so/r/PLACEHOLDER",
   nextCohortStart: "To be confirmed",
 
@@ -53,15 +67,36 @@ export const englishForDevs = {
   sessionHours: 2,
   dailyDrillMinutes: 10,
 
-  webinarStartsAt: "2026-11-21T10:00:00-06:00",
   webinarDuration: "30–45 min",
-  webinarUrl: "https://lu.ma/english-for-devs-PLACEHOLDER",
+  webinars: [
+    {
+      label: "Weeknight",
+      date: "2026-11-18T19:00:00-06:00",
+      url: "https://lu.ma/english-for-devs-weeknight-PLACEHOLDER",
+    },
+    {
+      label: "Saturday",
+      date: "2026-11-21T10:00:00-06:00",
+      url: "https://lu.ma/english-for-devs-saturday-PLACEHOLDER",
+    },
+  ],
+  standupClubMinutes: 30,
+  standupClubSchedule: "Tuesdays, 7:00–7:30 p.m. El Salvador (8:00–8:30 p.m. US Eastern)",
+  standupClubUrl: "https://lu.ma/english-for-devs-standup-club-PLACEHOLDER",
+  leadMagnetTitle:
+    "Free download: 25 phrases for your daily standup + Tell me about yourself template",
+  leadMagnetUrl: "https://tally.so/r/PLACEHOLDER-lead-magnet",
+  /**
+   * GoatCounter site code only (not the full URL). Empty skips analytics.
+   * VITE_GOATCOUNTER_CODE overrides this. See the file comment for setup.
+   */
+  goatcounterCode: "",
 
   refundHours: 48,
   recordingsAvailableFor: "To be confirmed",
   internationalPaymentNote: "Paying from outside El Salvador? Card payments available",
   employerPaymentNote:
-    "Email arriola.dev@outlook.com if your employer will pay. Say whether you need an invoice, and Jaime will confirm what he can send.",
+    "Company paying? Invoices available. Email arriola.dev@outlook.com and say you need an invoice.",
   noGuaranteeNote:
     "There is no job guarantee. This program does not promise a job, an interview, or an offer.",
 
@@ -84,6 +119,14 @@ export const englishForDevs = {
     "Beginners who cannot yet hold a simple conversation in English.",
     "Anyone looking for a job guarantee.",
   ],
+
+  testimonials: [] as {
+    name: string;
+    role: string;
+    linkedinUrl: string;
+    quote: string;
+    videoUrl?: string;
+  }[],
 
   syllabus: [
     {

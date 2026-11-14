@@ -17,6 +17,7 @@ import {
   Smartphone,
   Users,
   Video,
+  Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +27,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { englishForDevs, type CohortPhase } from "@/data/englishForDevs";
+import { installGoatCounter, trackCta, type CtaEvent } from "@/lib/goatcounter";
 import {
   activePrice,
   cohortStartLabel,
@@ -35,10 +37,12 @@ import {
   getCohortPhase,
   levelCheckLabel,
   paymentUrlFor,
+  plusOffer,
   refundSentence,
   seatsLabel,
   sessionClocks,
   sessionDateLabel,
+  upcomingWebinars,
 } from "@/lib/cohortSchedule";
 import { cn } from "@/lib/utils";
 
@@ -187,7 +191,12 @@ function LevelCheckButton({ className }: { className?: string }) {
         className,
       )}
     >
-      <a href={englishForDevs.levelCheckUrl} target="_blank" rel="noopener noreferrer">
+      <a
+        href={englishForDevs.levelCheckUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackCta("level-check")}
+      >
         <Video className="w-4 h-4 shrink-0" aria-hidden="true" />
         {levelCheckLabel()}
         <span className="sr-only"> (opens in a new tab)</span>
@@ -196,7 +205,15 @@ function LevelCheckButton({ className }: { className?: string }) {
   );
 }
 
-function PrimaryAction({ phase, className }: { phase: CohortPhase; className?: string }) {
+function PrimaryAction({
+  phase,
+  className,
+  event = "enroll",
+}: {
+  phase: CohortPhase;
+  className?: string;
+  event?: Extract<CtaEvent, "enroll" | "enroll-plus">;
+}) {
   if (phase === "closed") {
     return (
       <Button
@@ -204,7 +221,12 @@ function PrimaryAction({ phase, className }: { phase: CohortPhase; className?: s
         size="lg"
         className={cn("cta-gradient-button text-background font-semibold w-full sm:w-auto h-12 px-6", className)}
       >
-        <a href={englishForDevs.waitlistUrl} target="_blank" rel="noopener noreferrer">
+        <a
+          href={englishForDevs.waitlistUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackCta("waitlist")}
+        >
           Join the waitlist
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
           <span className="sr-only"> (opens in a new tab)</span>
@@ -213,7 +235,8 @@ function PrimaryAction({ phase, className }: { phase: CohortPhase; className?: s
     );
   }
 
-  const href = paymentUrlFor(phase);
+  const href = event === "enroll-plus" ? plusOffer(phase).url : paymentUrlFor(phase);
+  const amount = event === "enroll-plus" ? plusOffer(phase).amount : activePrice(phase);
   if (!href) return null;
 
   return (
@@ -222,8 +245,8 @@ function PrimaryAction({ phase, className }: { phase: CohortPhase; className?: s
       size="lg"
       className={cn("cta-gradient-button text-background font-semibold w-full sm:w-auto h-12 px-6", className)}
     >
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        Enroll · {formatUsd(activePrice(phase))}
+      <a href={href} target="_blank" rel="noopener noreferrer" onClick={() => trackCta(event)}>
+        Enroll · {formatUsd(amount)}
         <ArrowRight className="w-4 h-4" aria-hidden="true" />
         <span className="sr-only"> (opens in a new tab)</span>
       </a>
@@ -301,6 +324,10 @@ const EnglishForDevs = () => {
   }, []);
 
   useEffect(() => {
+    installGoatCounter();
+  }, []);
+
+  useEffect(() => {
     const previousTitle = document.title;
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     const previousDescription = meta?.content ?? "";
@@ -366,6 +393,15 @@ const EnglishForDevs = () => {
           with one or two people instead of waiting through a long round of monologues. Week 4
           includes a live 15-minute mock interview. Between Saturdays, the voice drills are about{" "}
           {englishForDevs.dailyDrillMinutes} minutes a day on your phone.
+        </p>
+      ),
+    },
+    {
+      id: "recordings-access",
+      question: "Are sessions recorded and who can see them?",
+      answer: (
+        <p>
+          Sessions are recorded for enrolled students only. You will be asked for consent.
         </p>
       ),
     },
@@ -758,22 +794,52 @@ const EnglishForDevs = () => {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="webinar" aria-labelledby="webinar-heading" className="border-t border-border">
+      <motion.section {...fadeUp} id="lead-magnet" aria-labelledby="lead-magnet-heading" className="border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <SectionHeading id="webinar-heading" eyebrow="Free webinar" title="Next free live webinar">
+          <div className="max-w-3xl bg-card border border-border rounded-lg p-6 sm:p-8">
+            <p className="text-xs sm:text-sm uppercase tracking-wider text-foreground/60 mb-3">Free download</p>
+            <h2 id="lead-magnet-heading" className="text-2xl sm:text-3xl font-semibold text-foreground">
+              {englishForDevs.leadMagnetTitle}
+            </h2>
+            <p className="mt-4 text-base text-foreground/80 leading-relaxed">
+              Leave your name and an email or WhatsApp number. The form sends the PDF.
+            </p>
+            <div className="mt-6">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-auto min-h-12 whitespace-normal px-6 py-3">
+                <a
+                  href={englishForDevs.leadMagnetUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackCta("lead-magnet")}
+                >
+                  <Download className="w-4 h-4" aria-hidden="true" />
+                  Get the free PDF
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="standup-club" aria-labelledby="standup-club-heading" className="border-t border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <SectionHeading id="standup-club-heading" eyebrow="Free practice" title="Standup Club">
             <p>
-              {englishForDevs.webinarDuration}. A live look at the work before you book the level
-              check or pay for a seat.
+              A free {englishForDevs.standupClubMinutes}-minute open English speaking session for developers.
+              No seat in the cohort required.
             </p>
           </SectionHeading>
           <article className="max-w-xl bg-card border border-border rounded-lg p-6">
-            <p className="text-sm text-foreground/80">{describeInstant(englishForDevs.webinarStartsAt).elSalvador}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{describeInstant(englishForDevs.webinarStartsAt).eastern}</p>
-            <p className="mt-3 text-sm text-muted-foreground">{englishForDevs.webinarDuration}</p>
+            <p className="text-sm text-foreground/80">{englishForDevs.standupClubSchedule}</p>
             <div className="mt-6">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-6">
-                <a href={englishForDevs.webinarUrl} target="_blank" rel="noopener noreferrer">
-                  Register for the free webinar
+              <Button asChild size="lg" variant="outline" className="h-12 px-6 border-border bg-background hover:bg-secondary hover:text-foreground">
+                <a
+                  href={englishForDevs.standupClubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join Standup Club
                   <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </Button>
@@ -781,6 +847,87 @@ const EnglishForDevs = () => {
           </article>
         </div>
       </motion.section>
+
+      <motion.section {...fadeUp} id="webinar" aria-labelledby="webinar-heading" className="border-t border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <SectionHeading id="webinar-heading" eyebrow="Free webinar" title="Upcoming live webinars">
+            <p>
+              {englishForDevs.webinarDuration} each. A live look at the work before you book the level
+              check or pay for a seat. Past dates drop off on their own.
+            </p>
+          </SectionHeading>
+          {upcomingWebinars(now).length === 0 ? (
+            <p className="text-sm text-muted-foreground">No upcoming webinar is on the calendar yet.</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+              {upcomingWebinars(now).map((webinar) => {
+                const when = describeInstant(webinar.date);
+                return (
+                  <article key={webinar.url} className="bg-card border border-border rounded-lg p-6">
+                    <p className="text-sm font-semibold text-primary">{webinar.label}</p>
+                    <p className="mt-3 text-sm text-foreground/80">{when.elSalvador}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{when.eastern}</p>
+                    <p className="mt-3 text-sm text-muted-foreground">{englishForDevs.webinarDuration}</p>
+                    <div className="mt-6">
+                      <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-6">
+                        <a
+                          href={webinar.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => trackCta("webinar")}
+                        >
+                          Register
+                          <span className="sr-only"> for the {webinar.label} webinar (opens in a new tab)</span>
+                        </a>
+                      </Button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </motion.section>
+
+      {englishForDevs.testimonials.length > 0 ? (
+        <motion.section {...fadeUp} aria-labelledby="testimonials-heading" className="border-t border-border">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+            <SectionHeading id="testimonials-heading" eyebrow="From developers" title="What participants said" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+              {englishForDevs.testimonials.map((item) => (
+                <article key={`${item.name}-${item.quote}`} className="bg-card border border-border rounded-lg p-6">
+                  <blockquote className="text-sm sm:text-base text-foreground/80 leading-relaxed">
+                    “{item.quote}”
+                  </blockquote>
+                  <p className="mt-4 text-sm font-semibold text-foreground">
+                    <a
+                      href={item.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline underline-offset-4 hover:text-primary/80"
+                    >
+                      {item.name}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </p>
+                  <p className="text-sm text-muted-foreground">{item.role}</p>
+                  {item.videoUrl ? (
+                    <a
+                      href={item.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex text-sm text-primary underline underline-offset-4 hover:text-primary/80"
+                    >
+                      Watch
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+      ) : null}
 
       <motion.section {...fadeUp} aria-labelledby="instructor-heading" className="border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -864,54 +1011,115 @@ const EnglishForDevs = () => {
 
       <motion.section {...fadeUp} aria-labelledby="pricing-heading" className="border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <SectionHeading id="pricing-heading" eyebrow="Pricing" title={`One plan. ${englishForDevs.maxSeats} seats.`}>
-            <p>{seatsLabel()}. Recordings are included. There is no second tier.</p>
+          <SectionHeading id="pricing-heading" eyebrow="Pricing" title={phase === "closed" ? "Enrollment for this cohort is closed" : `Standard or Plus. ${englishForDevs.maxSeats} seats.`}>
+            <p>
+              {phase === "closed"
+                ? `Next cohort starts ${englishForDevs.nextCohortStart}.`
+                : `${seatsLabel()}. Recordings are included. Plus adds two private 1:1 mock interviews with written feedback.`}
+            </p>
           </SectionHeading>
-          <article className="max-w-xl bg-card border border-primary/40 rounded-lg p-6 sm:p-8 card-glow">
-            <p className="text-sm font-medium text-primary">{englishForDevs.programName}</p>
-            <div className="mt-3">
-              <PriceBlock phase={phase} />
+          {countdownTarget ? (
+            <div className="max-w-xl mb-8">
+              <Countdown target={countdownTarget} label={countdownLabel} />
             </div>
-            <p className="mt-3 text-sm font-medium text-foreground">{seatsLabel()}</p>
-            {phase !== "closed" && englishForDevs.installmentsNote ? (
-              <p className="mt-2 text-sm text-muted-foreground">{englishForDevs.installmentsNote}</p>
-            ) : null}
-            {countdownTarget ? (
-              <div className="mt-6">
-                <Countdown target={countdownTarget} label={countdownLabel} />
+          ) : null}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
+            <article className="bg-card border border-primary/40 rounded-lg p-6 sm:p-8 card-glow flex flex-col">
+              <p className="text-sm font-medium text-primary">Standard</p>
+              <div className="mt-3">
+                {phase === "early-bird" ? (
+                  <div>
+                    <p className="text-sm font-medium text-primary">Early-bird price</p>
+                    <p className="mt-1 text-4xl font-semibold text-foreground">{formatUsd(englishForDevs.earlyBirdPrice)}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      <s>{formatUsd(englishForDevs.regularPrice)}</s>
+                      <span> regular price</span>
+                    </p>
+                  </div>
+                ) : (
+                  <div>
+                    <p className="text-sm font-medium text-primary">Price</p>
+                    <p className="mt-1 text-4xl font-semibold text-foreground">{formatUsd(englishForDevs.regularPrice)}</p>
+                  </div>
+                )}
               </div>
-            ) : null}
-            <p className="mt-4 text-sm text-foreground/70">
+              <p className="mt-3 text-sm font-medium text-foreground">{seatsLabel()}</p>
+              <ul className="mt-6 space-y-3 flex-1">
+                {[
+                  `${englishForDevs.weekCount} live Saturday sessions, ${englishForDevs.sessionHours} hours each`,
+                  `A closed group of ${englishForDevs.maxSeats}, with breakout drills in pairs and trios`,
+                  "Recordings of every session",
+                  `Daily ${englishForDevs.dailyDrillMinutes}-minute voice drills and the prompt library`,
+                  "The pitch, the STAR stories, the standup script, and a recorded mock with written feedback",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
+                    <Check className="w-4 h-4 mt-0.5 text-primary shrink-0" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              {phase !== "closed" ? (
+                <div className="mt-8">
+                  <PrimaryAction phase={phase} className="w-full" />
+                </div>
+              ) : null}
+            </article>
+            <article className="bg-card border border-border rounded-lg p-6 sm:p-8 flex flex-col">
+              <p className="text-sm font-medium text-primary">Plus</p>
+              <div className="mt-3">
+                <div>
+                  <p className="text-sm font-medium text-primary">
+                    {plusOffer(phase).compareAt !== null ? "Early-bird price" : "Price"}
+                  </p>
+                  <p className="mt-1 text-4xl font-semibold text-foreground">{formatUsd(plusOffer(phase).amount)}</p>
+                  {plusOffer(phase).compareAt !== null ? (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      <s>{formatUsd(plusOffer(phase).compareAt ?? 0)}</s>
+                      <span> regular price</span>
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-foreground/80 leading-relaxed">
+                Everything in Standard, plus two private 1:1 mock interviews with written feedback.
+              </p>
+              {phase !== "closed" ? (
+                <div className="mt-8">
+                  <PrimaryAction phase={phase} event="enroll-plus" className="w-full" />
+                </div>
+              ) : null}
+            </article>
+          </div>
+          <div className="max-w-5xl mt-6 space-y-3">
+            <p className="text-sm text-foreground/70">
               Cohort start: {cohortStartLabel()}. {clocks.elSalvador}. {clocks.eastern}.
             </p>
-            <ul className="mt-6 space-y-3">
-              {[
-                `${englishForDevs.weekCount} live Saturday sessions, ${englishForDevs.sessionHours} hours each`,
-                `A closed group of ${englishForDevs.maxSeats}, with breakout drills in pairs and trios`,
-                "Recordings of every session",
-                `Daily ${englishForDevs.dailyDrillMinutes}-minute voice drills and the prompt library`,
-                "The pitch, the STAR stories, the standup script, and a recorded mock with written feedback",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
-                  <Check className="w-4 h-4 mt-0.5 text-primary shrink-0" aria-hidden="true" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 space-y-3 rounded-lg border border-border bg-background p-4">
+            {phase !== "closed" && englishForDevs.installmentsNote ? (
+              <p className="text-sm text-muted-foreground">{englishForDevs.installmentsNote}</p>
+            ) : null}
+            {phase !== "closed" ? (
+              <p className="text-sm text-muted-foreground">{englishForDevs.companyInvoiceNote}</p>
+            ) : null}
+            {phase !== "closed" ? (
+              <p className="text-sm text-muted-foreground">{englishForDevs.internationalPaymentNote}</p>
+            ) : null}
+            <div className="space-y-3 rounded-lg border border-border bg-card p-4">
               <p className="flex items-start gap-2 text-sm text-foreground/80">
                 <Shield className="w-4 h-4 mt-0.5 text-primary shrink-0" aria-hidden="true" />
                 <span>{refundSentence()}</span>
               </p>
               <p className="text-sm text-foreground/80">{englishForDevs.noGuaranteeNote}</p>
             </div>
-            {phase !== "closed" ? (
-              <p className="mt-4 text-sm text-muted-foreground">{englishForDevs.internationalPaymentNote}</p>
-            ) : null}
-            <div className="mt-8">
-              <ActionStack phase={phase} />
-            </div>
-          </article>
+            {phase === "closed" ? (
+              <div className="pt-2">
+                <ActionStack phase={phase} />
+              </div>
+            ) : (
+              <div className="pt-2">
+                <LevelCheckButton />
+              </div>
+            )}
+          </div>
         </div>
       </motion.section>
 
