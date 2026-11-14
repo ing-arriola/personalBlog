@@ -1,19 +1,54 @@
-import { Grid3x3, FileText, ChevronRight, Download, Menu, X } from "lucide-react";
+import { ChevronRight, Download, Menu, X } from "lucide-react";
 import { NavLink } from "./NavLink";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { cn } from "@/lib/utils";
+
+type NavItem = {
+  to: string;
+  label: string;
+  highlight?: boolean;
+};
+
+const navItems: NavItem[] = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/work", label: "Selected Work" },
+  { to: "/contact", label: "Contact" },
+  { to: "/english-for-devs", label: "English for Devs", highlight: true },
+];
+
+const textLinks = navItems.filter((item) => !item.highlight);
+const highlightedLink = navItems.find((item) => item.highlight);
+
+function ProgramLink({
+  onClick,
+  fullWidth = false,
+}: {
+  onClick?: () => void;
+  fullWidth?: boolean;
+}) {
+  if (!highlightedLink) return null;
+
+  return (
+    <NavLink
+      to={highlightedLink.to}
+      onClick={onClick}
+      className={cn(
+        "inline-flex items-center justify-center font-semibold rounded-full border border-primary/60 bg-primary/10 text-primary hover:bg-primary/20 transition-colors whitespace-nowrap",
+        fullWidth ? "w-full text-base py-3 px-4" : "text-sm px-3 py-1.5",
+      )}
+      activeClassName="bg-primary text-primary-foreground border-primary hover:bg-primary/90"
+    >
+      {highlightedLink.label}
+    </NavLink>
+  );
+}
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/work", label: "Selected Work" },
-    { to: "/contact", label: "Contact" },
-  ];
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -49,8 +84,8 @@ const Navigation = () => {
           </NavLink>
 
           {/* Right side - Navigation Links and Resume Button */}
-          <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
+            {textLinks.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
@@ -60,6 +95,7 @@ const Navigation = () => {
                 {item.label}
               </NavLink>
             ))}
+            <ProgramLink />
             <NavLink to="/resume">
               <Button variant="default" size="sm" className="gap-2 bg-primary hover:bg-primary/90">
                 <Download className="w-4 h-4" />
@@ -68,12 +104,15 @@ const Navigation = () => {
             </NavLink>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu button. The horizontal nav starts at lg so the
+              highlighted label does not collide with the logo. */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-foreground hover:text-primary transition-colors cursor-pointer"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-nav"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -99,19 +138,21 @@ const Navigation = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
                 onClick={closeMobileMenu}
-                className="fixed inset-0 bg-background/90 backdrop-blur-sm z-[60] md:hidden"
+                className="fixed inset-0 bg-background/90 backdrop-blur-sm z-[60] lg:hidden"
               />
 
               {/* Menu drawer */}
               <motion.div
+                id="mobile-nav"
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="fixed top-20 right-0 bottom-0 w-full max-w-sm bg-card border-l border-border z-[60] md:hidden overflow-y-auto"
+                className="fixed top-20 right-0 bottom-0 w-full max-w-sm bg-card border-l border-border z-[60] lg:hidden overflow-y-auto"
               >
                 <div className="flex flex-col p-6 space-y-4">
-                  {navItems.map((item) => (
+                  <ProgramLink onClick={closeMobileMenu} fullWidth />
+                  {textLinks.map((item) => (
                     <NavLink
                       key={item.to}
                       to={item.to}

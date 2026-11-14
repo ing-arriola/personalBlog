@@ -1,8 +1,9 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
   return (
-    <footer className="border-t border-border bg-card mt-20">
+    <footer className={cn("border-t border-border bg-card mt-20", className)}>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-muted-foreground">
